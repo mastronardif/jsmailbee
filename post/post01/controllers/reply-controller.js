@@ -9,8 +9,8 @@ var json2html = require('node-json2html');
 var validator = require('validator');
 //var mylib = require('../lib/mylib');
 
-var mg = global.config.get('Mg');
-var admin = global.config.get('Admin');
+var mg = global.config.Mg;
+var admin = global.config.Admin;
 
 var mailgun = require('mailgun-js')({apiKey: mg.api_key, domain: mg.domain});
 
@@ -41,15 +41,15 @@ module.exports.mailStore = function (req, res) {
     //attachment: attch //[attch,attch] 
     //inline: file
   };
-  if (req.data.length>12) {
-    data.attachment = attch;
-  }
+//   if (req.data.length>12) {
+//     data.attachment = attch;
+//   }
 
 //
 var gpath = require('path');
 var fs = require('fs');
-//var new_path = gpath.join(process.env.PWD, '/uploads/', 'index.html');
-var new_path = gpath.join(process.env.PWD, '/uploads/', 'indexdoggy.html');
+//var new_path = gpath.join(process.env.PWD, '/uploads/', 'indexdoggy.html');
+var new_path = gpath.join(process.env.PWD, '/uploads/', 'html2.html');
 
 console.log('\n\n new_path = \n', new_path);
 
@@ -70,8 +70,8 @@ if ('fm debug' === 'fm debug') {
   }
   });
 } // end debug
-
-  res.send(htmlResp);
+    console.log('not doing res.send(htmlResp)');
+  //res.send(htmlResp);
 };
 
 

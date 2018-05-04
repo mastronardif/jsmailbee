@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mailgun-js": "^0.18.0",
+    "node-json2html": "^1.2.0",
+    "validator": "^9.4.1"
   }
 }

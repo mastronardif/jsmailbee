@@ -26,11 +26,16 @@ var g = {
     //baseUrl: "https://slashdot.org" //marketwatch.com" //; //"http://www.drudgereport.com" //"http://joeschedule.com" //"https://stackoverflow.com"    
 };
 
-var test = ["http://www.drudgereport.com", 'https://slashdot.org/'];
+var test = ["http://www.drudgereport.com", 
+'https://slashdot.org/',
+'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/',
+'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ',
+'https://www.google.com/url?rct=j&sa=t&url=https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ'
+];
 
 //var gurl = "https://marketwatch.com"; // 'https://slashdot.org/';//'https://slashdot.org/'; //'http://www.drudgereport.com/'; //'https://slashdot.org/';//'http://www.imdb.com/title/tt1229340/';
-g.Url=  test[1]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
-g.baseHRef= 'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
+g.Url=  test[3]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
+g.baseHRef= 'https://www.techrepublic.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
 g.protocol= url.parse(g.Url).protocol ? url.parse(g.Url).protocol : 'https';
 console.log();
 

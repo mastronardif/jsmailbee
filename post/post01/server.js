@@ -8,10 +8,9 @@ var gpath = require('path');
 
 var path = __dirname + '/views/';
 var pathUploads = __dirname + '/uploads/';
-global.config = require('config');
+global.config = require('./config/default.json');
 var replyController = require('./controllers/reply-controller');
 var pingController = require('./controllers/ping-controller');
-var townController = require('./controllers/town-controller');
 
 console.log(__dirname);
 
@@ -31,9 +30,7 @@ router.get("/about",function(req,res){
   res.sendFile(path + "about.html");
 });
 
-router.get ('/town/mylist/:id', function(req,res){
-  townController.townlist(path, req, res);
-});
+
 
 //router.all ('/pingcors', pingController.pingcors);
 router.all ('/ping', pingController.ping);

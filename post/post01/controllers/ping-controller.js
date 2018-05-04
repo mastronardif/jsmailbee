@@ -1,8 +1,9 @@
 'use strict';
+
 //var util = require('util');
 //var session = require('client-sessions');
 //var assert = require('assert');
-
+var replyController = require('./reply-controller');
 module.exports.ping = function (req, res) {
     console.log("ping-controller.ping");
     console.log(req.params);
@@ -11,6 +12,7 @@ module.exports.ping = function (req, res) {
     var results = {'query': req.query, 'body':req.body};
     res.json(results);
     //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
+    replyController.mailStore(req, res);
 };
 
 module.exports.pingjp = function (req, res) {
