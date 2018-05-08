@@ -34,15 +34,22 @@ var test = ["http://www.drudgereport.com",
 ];
 
 //var gurl = "https://marketwatch.com"; // 'https://slashdot.org/';//'https://slashdot.org/'; //'http://www.drudgereport.com/'; //'https://slashdot.org/';//'http://www.imdb.com/title/tt1229340/';
-g.Url=  test[3]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
-g.baseHRef= 'https://www.techrepublic.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
+g.Url=  test[1]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
+g.baseHRef= test[1]; //'http://www.drudgereport.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
 g.protocol= url.parse(g.Url).protocol ? url.parse(g.Url).protocol : 'https';
 console.log();
 
-getUrl(g.Url);
+//getUrl(g.Url);
+var testType = {outType: 'file', path: '../output/html2.html'};
+//var testType = {outType: 'default'};
 
+readUrl(g.Url, testType);
 
-function getUrl(url) {
+function readUrl(url, output) {
+	getUrl(url, output);	
+}
+
+function getUrl(url, output) {
     // The URL we will scrape from - in our example Anchorman 2.
 
     // The structure of our request call
@@ -74,8 +81,19 @@ function getUrl(url) {
     //         var json = { title : "", release : "", rating : ""};
 
             bobo('html.html', html);
-            bobo('../output/html2.html', dom.serialize() );
-            return html;
+            //bobo('../output/html2.html', dom.serialize() );
+			switch (output.outType) {
+				case 'file':
+					//bobo('../output/html2.html', html);
+					bobo(output.path,  dom.serialize());
+					break;
+				case 'response':
+					output.res.send( dom.serialize());			
+					break;			
+		
+				default:
+					console.log( dom.serialize());
+			}            
         }
     })
 }
@@ -143,9 +161,9 @@ function makeMailToFromURI(uri) {
         //console.log('1____________________________ '+ hrefAttrValue);
     }
     else if ((hrefAttrValue.indexOf('/')==0) || (hrefAttrValue.indexOf('/')==-1) ) {
-        console.log('2____________________________ '+ hrefAttrValue);
+        //console.log('2____________________________ '+ hrefAttrValue);
         hrefAttrValue = g.baseHRef + hrefAttrValue;
-        console.log('2____________________________ '+ hrefAttrValue);
+        //console.log('2____________________________ '+ hrefAttrValue);
     }
    
 
