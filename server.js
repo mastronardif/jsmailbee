@@ -9,8 +9,8 @@ var gpath = require('path');
 var path = __dirname + '/views/';
 var pathUploads = __dirname + '/uploads/';
 global.config = {};//for Heroku require('./config/default.json');
-var replyController = require('./controllers/reply-controller');
-var pingController = require('./controllers/ping-controller');
+//var replyController = require('./controllers/reply-controller');
+//var pingController = require('./controllers/ping-controller');
 
 console.log(__dirname);
 
