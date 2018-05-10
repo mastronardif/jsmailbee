@@ -33,7 +33,8 @@ router.get("/about",function(req,res){
 
 
 //router.all ('/pingcors', pingController.pingcors);
-router.all ('/ping', pingController.ping);
+////router.all ('/ping', pingController.ping);
+
 //router.get ('/pingjp', pingController.pingjp);
 //app.all ('/ping',stormpath.loginRequired, pingController.ping);console.log(req.query);
 
