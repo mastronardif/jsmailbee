@@ -20,7 +20,7 @@ app.use(bodyp.json());
 app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/uploads'));
+//app.use(express.static(__dirname + '/uploads'));
 
 router.get("/mylist",function(req,res){
   res.sendFile(path + "thelist.html");
