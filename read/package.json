@@ -1,0 +1,21 @@
+{
+  "name": "myscrape",
+  "version": "1.0.0",
+  "description": "scrape the url",
+  "main": "test01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FxM",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "ineed": "^1.0.4",
+    "jsdom": "^11.9.0",
+    "marked": "^0.3.19",
+    "phantom": "^4.0.12",
+    "stylus": "^0.54.5",
+    "url": "^0.11.0",
+    "webpage": "^0.3.0"
+  }
+}

@@ -1,21 +1,18 @@
 {
-  "name": "myscrape",
+  "name": "post01",
   "version": "1.0.0",
-  "description": "scrape the url",
-  "main": "test01.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "FxM",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "ineed": "^1.0.4",
-    "jsdom": "^11.9.0",
-    "marked": "^0.3.19",
-    "phantom": "^4.0.12",
-    "stylus": "^0.54.5",
-    "url": "^0.11.0",
-    "webpage": "^0.3.0"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mailgun-js": "^0.18.0",
+    "node-json2html": "^1.2.0",
+    "validator": "^9.4.1"
   }
 }
