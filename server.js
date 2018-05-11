@@ -8,9 +8,27 @@ var gpath = require('path');
 
 var path = __dirname + '/views/';
 var pathUploads = __dirname + '/uploads/';
+
 global.config = {};//for Heroku require('./config/default.json');
+const KconfigFN = './config/default.json';
+if (fs.existsSync(KconfigFN)) {
+  global.config = require(KconfigFN);
+}
+else {
+  global.config = {};
+  global.config.Mg = {
+    "api_key": "key-0-rxwnpe9gllqe6odwxebn79vicgxf76",
+    "domain": "joeschedule.mailgun.org"  
+  };
+  global.config.Admin = {
+  "mail": "mastronardif@gmail.com",
+  "subject": "jsmailbee test 101.",
+  "fromAdmin": "mastronardif@gmail.com",
+  "toAdmin": "mastronardif@gmail.com"
+  };
+}
 //var replyController = require('./controllers/reply-controller');
-//var pingController = require('./controllers/ping-controller');
+var pingController = require('./controllers/ping-controller');
 
 console.log(__dirname);
 
@@ -33,7 +51,7 @@ router.get("/about",function(req,res){
 
 
 //router.all ('/pingcors', pingController.pingcors);
-////router.all ('/ping', pingController.ping);
+router.all ('/ping', pingController.ping);
 
 //router.get ('/pingjp', pingController.pingjp);
 //app.all ('/ping',stormpath.loginRequired, pingController.ping);console.log(req.query);

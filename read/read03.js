@@ -6,6 +6,9 @@ var path= require('path');
 var { JSDOM } = require('jsdom');
 const url = require('url');
 
+console.log(`port =${process.env.PORT || 3000}`);
+return;
+
 var options = {
     //url: "https://example.org/",
     referrer: "https://example.com/",
@@ -37,7 +40,6 @@ var test = ["http://www.drudgereport.com",
 g.Url=  test[1]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
 g.baseHRef= test[1]; //'http://www.drudgereport.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
 g.protocol= url.parse(g.Url).protocol ? url.parse(g.Url).protocol : 'https';
-console.log();
 
 //getUrl(g.Url);
 var testType = {outType: 'file', path: '../output/html2.html'};
