@@ -10,6 +10,33 @@ table tr:nth-child(even) {
   background-color: #ffffff;
 }
 
+a.mbee {    
+    font-size: 150%;
+    color:#ff0000;
+}
+
+a.mbee:after {
+    content: " ";
+    display: inline-block;
+    background: url("http://joeschedule.com/faviconBee.ico") no-repeat top right;
+    width: 18px;
+    height: 18px;
+}
+a.mbee:visited {color:#745a07;}
+
+
+za:after {
+    content: "";
+    display: inline-block;
+    background: url("http://joeschedule.com/faviconBee.ico") no-repeat top right;
+    width: 18px;
+    height: 18px;
+}
+a:link {color:#ff0000;}
+a:visited {color:#0000ff;}
+a:hover {color:#ffcc00;}
+
+
 .large { 
     color: #00FF00; 
     font-family:arial; 
