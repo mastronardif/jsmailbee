@@ -17,7 +17,7 @@ if (fs.existsSync(KconfigFN)) {
 else {
   global.config = {};
   global.config.Mg = {
-    "api_key": "key-0-rxwnpe9gllqe6odwxebn79vicgxf76",
+    "api_key": (process.env.Mg__api_key || 'wtf'),
     "domain": "joeschedule.mailgun.org"  
   };
   global.config.Admin = {
