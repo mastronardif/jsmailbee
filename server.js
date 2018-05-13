@@ -29,6 +29,7 @@ else {
 }
 //var replyController = require('./controllers/reply-controller');
 var pingController = require('./controllers/ping-controller');
+var readController = require('./controllers/read-controller');
 
 console.log(__dirname);
 
@@ -49,6 +50,7 @@ router.get("/about",function(req,res){
 });
 
 
+router.all ('/read', readController.read);
 
 //router.all ('/pingcors', pingController.pingcors);
 router.all ('/ping', pingController.ping);

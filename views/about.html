@@ -9,6 +9,9 @@
 
 <link rel="stylesheet" href="/css/my.css"/>
 
+<script src="/js/my.js">
+
+</script>
 </head>
 <body>
 
@@ -25,7 +28,7 @@
 <p class="large">                       
   <label for="message">Mail message :</label> <input type="submit" name="Operation" value="Publish">
   <label for="message"> message: <br>
-  <textarea rows="3" cols="25" id="idMessage" name="message"></textarea> <br>
+  <textarea rows="3" cols="25" id="idMessage" name="message" placeholder="enter url"></textarea> <br>
     <label for="email:">email :</label> <input type="email" size="24" id="email" name="email" value=""> <br>
     <input type="submit" name="Operation" value="each">
     <button name="Operation" value="send to my_gmail" type="submit">send glazzed response to my_gmail</button>
@@ -53,6 +56,8 @@
 plane janes<br/>
 <a href="https://slashdot.org"  target="blank">  <span>Slashdot</span></a>
 </div>
-
+<input id="readTest" type="button" value="read test" onclick="doFunction('./read', document.getElementById('idMessage').value);" />
+-
+<input id="pingTest" type="button" value="ping test" onclick="doFunction('./ping', document.getElementById('idMessage').value);" />
 </body>
 </html>

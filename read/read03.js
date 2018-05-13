@@ -6,9 +6,6 @@ var path= require('path');
 var { JSDOM } = require('jsdom');
 const url = require('url');
 
-console.log(`port =${process.env.PORT || 3000}`);
-return;
-
 var options = {
     //url: "https://example.org/",
     referrer: "https://example.com/",
@@ -25,11 +22,13 @@ var g = {
     subject: "Test(js) joemailweb.",
     tagOpen: "%26lttags img=keep%26gt<tags img=keep>",
     tagClose: "</tags> %26lt%3B%2Ftags%26gt",
-    mystyleDone: false
+    mystyleDone: false,
+    baseHRef: "tbd"
     //baseUrl: "https://slashdot.org" //marketwatch.com" //; //"http://www.drudgereport.com" //"http://joeschedule.com" //"https://stackoverflow.com"    
 };
 
 var test = ["http://www.drudgereport.com", 
+"https://www.w3schools.com/jsref/dom_obj_textarea.asp",
 'https://slashdot.org/',
 'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/',
 'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ',
@@ -38,7 +37,7 @@ var test = ["http://www.drudgereport.com",
 
 //var gurl = "https://marketwatch.com"; // 'https://slashdot.org/';//'https://slashdot.org/'; //'http://www.drudgereport.com/'; //'https://slashdot.org/';//'http://www.imdb.com/title/tt1229340/';
 g.Url=  test[1]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
-g.baseHRef= test[1]; //'http://www.drudgereport.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
+g.baseHRef= myGetBaseRef(test[1]); //'https://www.w3schools.com/jsref/';//test[1]; //'http://www.drudgereport.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
 g.protocol= url.parse(g.Url).protocol ? url.parse(g.Url).protocol : 'https';
 
 //getUrl(g.Url);
@@ -49,6 +48,18 @@ readUrl(g.Url, testType);
 
 function readUrl(url, output) {
 	getUrl(url, output);	
+}
+
+function myGetBaseRef(url) {
+    var myRe = /.*\//;
+    var baseRef = myRe.exec(url);
+
+    if (baseRef[0] === "https://" || baseRef[0] === "http://") {
+        baseRef = url;
+    }
+    console.log('baseRef= '+ baseRef);
+    
+    return baseRef;
 }
 
 function getUrl(url, output) {
