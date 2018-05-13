@@ -28,8 +28,8 @@ var g = {
 };
 
 var test = ["http://www.drudgereport.com", 
-"https://www.w3schools.com/jsref/dom_obj_textarea.asp",
 'https://slashdot.org/',
+"https://www.w3schools.com/jsref/dom_obj_textarea.asp",
 'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/',
 'https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ',
 'https://www.google.com/url?rct=j&sa=t&url=https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ'
@@ -193,7 +193,7 @@ function makeMailToFromURI(uri) {
     // }
     
     var url2 = hrefAttrValue;
-    var base = pageBaseUrl ? pageBaseUrl : g.baseUrl;
+    var base = pageBaseUrl ? pageBaseUrl : g.baseHRef;//g.baseUrl;
     if (!/^(f|ht)tps?:\/\//i.test(hrefAttrValue)) {
         url2 = base + hrefAttrValue;
      }

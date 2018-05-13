@@ -30,11 +30,13 @@ var outputType = {outType: 'file', path: './uploads/'};
 module.exports.test = function (src) {
     console.log("readHelpers.test", src);
     var Url = src;
+    g.baseHRef= myGetBaseRef(Url); 
+    g.protocol= url.parse(Url).protocol ? url.parse(Url).protocol : 'https';
+
     readUrl(Url, outputType);
 };
 
 function readUrl(url, output) {
-    g.baseHRef= myGetBaseRef(url); 
 	getUrl(url, output);	
 }
 
@@ -111,6 +113,7 @@ function cleanup(document)
     element = document.getElementsByTagName("a"), index;
     for (index = element.length - 1; index >= 0; index--) {
         var hrefAttrValue=element[index].href;
+        console.log(`g.baseHRef= ${g.baseHRef}`);
         var pageBaseUrl=g.baseHRef; //'ROOT/';
         var uri = makeHttpurl(pageBaseUrl, hrefAttrValue);
         var m2  = makeMailToFromURI(uri);
@@ -135,20 +138,24 @@ function makeMailToFromURI(uri) {
     return results;
   }
   
-  function makeHttpurl(pageBaseUrl, hrefAttrValue) {   
+  function makeHttpurl(pageBaseUrl, hrefAttrValue) { 
+    // console.log(`pageBaseUrl=  ${pageBaseUrl}`);
+     console.log(`hrefAttrValue=${hrefAttrValue}`);  
     if (hrefAttrValue.indexOf('//') == 0) {
         hrefAttrValue = g.protocol + hrefAttrValue;
     }
-    else if ((hrefAttrValue.indexOf('/')==0) || (hrefAttrValue.indexOf('/')==-1) ) {
-        hrefAttrValue = g.baseHRef + hrefAttrValue;
-    }
+    // else if ((hrefAttrValue.indexOf('/')==0) || (hrefAttrValue.indexOf('/')==-1) ) {
+    //     hrefAttrValue = g.baseHRef + hrefAttrValue;
+    // }
     
     var url2 = hrefAttrValue;
-    var base = pageBaseUrl ? pageBaseUrl : g.baseUrl;
+    var base = pageBaseUrl ? pageBaseUrl : g.baseHRef; //g.baseUrl;
     if (!/^(f|ht)tps?:\/\//i.test(hrefAttrValue)) {
+        // remove leading //'s
+        //hrefAttrValue = hrefAttrValue.replace(/^\/+/g, '');
         url2 = base + hrefAttrValue;
      }
-
+console.log(`url2=${url2}`);
     return url2;
   }
 function bobo(path, src) {
