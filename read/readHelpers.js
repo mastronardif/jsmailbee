@@ -23,12 +23,13 @@ var g = {
     tagOpen: "%26lttags img=keep%26gt<tags img=keep>",
     tagClose: "</tags> %26lt%3B%2Ftags%26gt",
     mystyleDone: false,
-    baseHRef: "tbd"
+    baseHRef: "tbd",
+    protocol: "tbd"
 };
 
 var outputType = {outType: 'file', path: './uploads/'};
 module.exports.test = function (src) {
-    console.log("readHelpers.test", src);
+    //console.log("readHelpers.test", src);
     var Url = src;
     g.baseHRef= myGetBaseRef(Url); 
     g.protocol= url.parse(Url).protocol ? url.parse(Url).protocol : 'https';
@@ -47,7 +48,7 @@ function myGetBaseRef(url) {
     if (baseRef[0] === "https://" || baseRef[0] === "http://") {
         baseRef = url;
     }
-    //console.log('baseRef= '+ baseRef);    
+  
     return baseRef;
 }
 
@@ -59,7 +60,7 @@ function getUrl(url, output) {
             var document = dom.window.document;
             var head = dom.window.document.getElementsByTagName('head')[0];
             var base_url = dom.window.location.origin;
-            console.log(`base_url = ${base_url}`)
+
             head.append(JSDOM.fragment(
                 `\n<style type="text/css" media="screen">\n`+
                 `a:link {color:#ff0000;}\n`+
@@ -113,8 +114,8 @@ function cleanup(document)
     element = document.getElementsByTagName("a"), index;
     for (index = element.length - 1; index >= 0; index--) {
         var hrefAttrValue=element[index].href;
-        console.log(`g.baseHRef= ${g.baseHRef}`);
-        var pageBaseUrl=g.baseHRef; //'ROOT/';
+
+        var pageBaseUrl=g.baseHRef;
         var uri = makeHttpurl(pageBaseUrl, hrefAttrValue);
         var m2  = makeMailToFromURI(uri);
         element[index].href = m2;
@@ -139,14 +140,12 @@ function makeMailToFromURI(uri) {
   }
   
   function makeHttpurl(pageBaseUrl, hrefAttrValue) { 
-    // console.log(`pageBaseUrl=  ${pageBaseUrl}`);
-     console.log(`hrefAttrValue=${hrefAttrValue}`);  
     if (hrefAttrValue.indexOf('//') == 0) {
         hrefAttrValue = g.protocol + hrefAttrValue;
     }
-    // else if ((hrefAttrValue.indexOf('/')==0) || (hrefAttrValue.indexOf('/')==-1) ) {
-    //     hrefAttrValue = g.baseHRef + hrefAttrValue;
-    // }
+    else if ((hrefAttrValue.indexOf('/')==0) || (hrefAttrValue.indexOf('/')==-1) ) {
+        hrefAttrValue = g.baseHRef + hrefAttrValue;
+    }
     
     var url2 = hrefAttrValue;
     var base = pageBaseUrl ? pageBaseUrl : g.baseHRef; //g.baseUrl;
@@ -154,10 +153,11 @@ function makeMailToFromURI(uri) {
         // remove leading //'s
         //hrefAttrValue = hrefAttrValue.replace(/^\/+/g, '');
         url2 = base + hrefAttrValue;
-     }
-console.log(`url2=${url2}`);
+    }
+     
     return url2;
-  }
+}
+
 function bobo(path, src) {
       fs.writeFile(path, src, (err) => {
         if (err) throw err;

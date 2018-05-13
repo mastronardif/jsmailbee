@@ -165,9 +165,6 @@ function makeMailToFromURI(uri) {
   }
   
   function makeHttpurl(pageBaseUrl, hrefAttrValue) {
-    //console.log(`pageBaseUrl= ${pageBaseUrl}`);
-    //console.log(`hrefAttrValue= ${hrefAttrValue}`);
-    
     if (hrefAttrValue.indexOf('//') == 0) {
         //console.log('1____________________________ '+ hrefAttrValue);
         hrefAttrValue = g.protocol + hrefAttrValue;
