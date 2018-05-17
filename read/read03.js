@@ -90,7 +90,7 @@ function getUrl(url, output) {
 
             head.append(JSDOM.fragment(
                 `\n<style type="text/css" media="screen">\n`+
-                `p.mbee{color:green;font-size: 160%;}\n`+
+                `p.mbee{color:green;font-family: franklin; font-size: 160%;}\n`+
                 `</style>\n`));
                 
             //body.append(JSDOM.fragment('<b>XXXXXXXXXXXXXXXX</b>'));

@@ -7,6 +7,15 @@ var path= require('path');
 var { JSDOM } = require('jsdom');
 const url = require('url');
 
+// constant data
+const KconfigFN = './public/css/mystamp.css';
+var cssStamp = "";
+try {  
+    cssStamp = fs.readFileSync(KconfigFN, 'utf8');
+//    console.log(cssStamp);    
+} catch(e) {
+    console.log('Error:', e.stack);
+}
 // var options = {
 //     //url: "https://example.org/",
 //     referrer: "https://example.com/",
@@ -24,7 +33,8 @@ var g = {
     tagClose: "</tags> %26lt%3B%2Ftags%26gt",
     mystyleDone: false,
     baseHRef: "tbd",
-    protocol: "tbd"
+    protocol: "tbd",
+    cssStamp: cssStamp
 };
 
 var outputType = {outType: 'file', path: './uploads/'};
@@ -70,16 +80,15 @@ function getUrl(url, output) {
                 `</style>\n`));
 
             head.append(JSDOM.fragment(
-                `\n<style type="text/css" media="screen">\n`+                
-                `p.mbee{color:green;font-size: 90%;}\n`+
+                `\n<style type="text/css" media="screen">\n`+
+                `${g.cssStamp}`+
                 `</style>\n`));
 
             cleanup(document);
-            body.append(JSDOM.fragment(`<p class="mbee">Thank you for using
-            <br/> Mailbee <br/>
-            ${url}
-            <a href="${url}">${url}</a>
-            </p>`));
+            body.append(JSDOM.fragment(`<p class="mbee">Thank you for using`+
+            `<br/> Mailbee <br/>`+            
+            `<a href="${url}">${url}</a>`+
+            `</p>`));
             
             bobo(output.path+'html.html', html);
 			switch (output.outType) {

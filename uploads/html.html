@@ -102,6 +102,17 @@ var NYTD=NYTD||{};NYTD.Abra=function(t){"use strict";function n(t){var n=i[t];re
             }
         }
 
+                    function testCookie(name) {
+                var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                if (match) return match[1];
+            }
+
+                        if (testCookie('nyt-gdpr') === '1') {
+                if (testCookie('NYT-T') !== 'out') {
+                    loadScript(gptScript);
+                }
+                return;
+            }
         
         window.advBidxc = window.advBidxc || {};
         window.advBidxc.renderAd = function () {};
@@ -140,7 +151,7 @@ var NYTD=NYTD||{};NYTD.Abra=function(t){"use strict";function n(t){var n=i[t];re
 <esi:include src="/svc/web-products/userinfo-v3.json" />
 </script>
 -->
-<script id="magnum-feature-flags" type="application/json">["limitFabrikSave","moreFollowSuggestions","unfollowComments","supportedBy","magazineLeaderboardAd","freeTrial","kickerWork","fixSearchSort","dateSortMisMatch","supplementalMarketingAd","shareToolFeature","enableIssuesCollectionType","enableFlexFrameAds","liveBlogsOnNewsEvents","enableSeriesCollectionType","paidPostStream","restaurantSearchAPIUpdate","MovieTickets","extendedVerticalImageSupport","NYTExperiment","diningOpenTableLink","updateRestaurantReservations","MapDining","NeighborhoodOptions","removeInternationalEdition","clientSideABRA","abraOverrideVersion","mapleFreeTrial","piiBlockDFP","caslOpt","indexAsHeaderBidder","headerBidder","jkiddScript","blueKai","apsTagEnabled","tMagazineFontTest"]</script>
+<script id="magnum-feature-flags" type="application/json">["limitFabrikSave","moreFollowSuggestions","unfollowComments","supportedBy","magazineLeaderboardAd","freeTrial","kickerWork","fixSearchSort","dateSortMisMatch","supplementalMarketingAd","shareToolFeature","enableIssuesCollectionType","enableFlexFrameAds","liveBlogsOnNewsEvents","enableSeriesCollectionType","paidPostStream","restaurantSearchAPIUpdate","MovieTickets","extendedVerticalImageSupport","NYTExperiment","diningOpenTableLink","updateRestaurantReservations","MapDining","NeighborhoodOptions","removeInternationalEdition","clientSideABRA","abraOverrideVersion","mapleFreeTrial","piiBlockDFP","caslOpt","indexAsHeaderBidder","headerBidder","jkiddScript","blueKai","apsTagEnabled","tMagazineFontTest","gdpr"]</script>
 <script>
 var require = {
     baseUrl: 'https://g1.nyt.com/assets/',
@@ -444,38 +455,9 @@ var require = {
                             <article class="story theme-summary ">
                                                                                                                                                                                                 <figure class="media photo" aria-label="media" role="group">
                         <span class="visually-hidden">Photo</span>
-                        <a href="https://www.nytimes.com/2018/05/16/opinion/junot-diaz-metoo.html" data-rref="">
-                            <img src="https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-jumbo.jpg"
-                                 srcset="https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-jumbo.jpg 1024w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-mediumThreeByTwo440.jpg 440w"
-                                 alt=""
-                            />
-                                                    </a>
-                        <figcaption class="caption" itemprop="caption description">
-                            <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Michael Loccisano/Getty Images for The Norman Mailer Center</span>
-                        </figcaption>
-                    </figure>
-                                <div class="story-body">
-                                            <h3 class="kicker">The Stone</h3>
-                                        <h2 class="headline">
-                        <a href="https://www.nytimes.com/2018/05/16/opinion/junot-diaz-metoo.html" data-rref="">This Is Not Just About Junot Díaz</a>
-                    </h2>
-                    <p class="summary">
-                        All of us — including the #MeToo movement — need to think about a future in which repentant sexists have a place.                                            </p>
-                    <p class="byline">
-                        <span class="freshness"><time data-utc-timestamp="1526512496" datetime="1526512496"></time></span>
-                                                    <span class="divider"></span>
-                                                <span class="author" itemprop="author">By LINDA MARTÍN ALCOFF</span>
-                    </p>
-                </div>
-            </article>
-        </li>
-            <li>
-                            <article class="story theme-summary">
-                                                                                                                                        <figure class="media photo" aria-label="media" role="group">
-                        <span class="visually-hidden">Photo</span>
                         <a href="https://www.nytimes.com/2018/05/16/opinion/he-walked-for-his-right-to-vote-now-hes-running-for-office.html" data-rref="">
-                            <img src="https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/00sadlerWeb-videoLarge.jpg"
-                                 srcset="https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/00sadlerWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/00sadlerWeb-mediumThreeByTwo440.jpg 440w"
+                            <img src="https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/merlin_137328849_857f43ba-d349-445c-a9f9-8a4adb54a012-jumbo.jpg"
+                                 srcset="https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/merlin_137328849_857f43ba-d349-445c-a9f9-8a4adb54a012-jumbo.jpg 1024w, https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/00sadlerWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/15/opinion/00sadlerWeb/00sadlerWeb-mediumThreeByTwo440.jpg 440w"
                                  alt=""
                             />
                                                     </a>
@@ -493,34 +475,6 @@ var require = {
                         <span class="freshness"><time data-utc-timestamp="1526510704" datetime="1526510704"></time></span>
                                                     <span class="divider"></span>
                                                 <span class="author" itemprop="author">By THE EDITORIAL BOARD</span>
-                    </p>
-                </div>
-            </article>
-        </li>
-            <li>
-                            <article class="story theme-summary">
-                                                                                                                                        <figure class="media photo" aria-label="media" role="group">
-                        <span class="visually-hidden">Photo</span>
-                        <a href="https://www.nytimes.com/2018/05/16/opinion/gaza-palestinians-protests.html" data-rref="">
-                            <img src="https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-videoLarge.jpg"
-                                 srcset="https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-mediumThreeByTwo440.jpg 440w"
-                                 alt=""
-                            />
-                                                    </a>
-                        <figcaption class="caption" itemprop="caption description">
-                            <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Mahmud Hams/Agence France-Presse &mdash; Getty Images</span>
-                        </figcaption>
-                    </figure>
-                                <div class="story-body">
-                                        <h2 class="headline">
-                        <a href="https://www.nytimes.com/2018/05/16/opinion/gaza-palestinians-protests.html" data-rref="">Gaza’s Miseries Have Palestinian Authors</a>
-                    </h2>
-                    <p class="summary">
-                        Why is nothing expected of Palestinians, and everything forgiven, while everything is expected of Israelis, and nothing forgiven?                                            </p>
-                    <p class="byline">
-                        <span class="freshness"><time data-utc-timestamp="1526497640" datetime="1526497640"></time></span>
-                                                    <span class="divider"></span>
-                                                <span class="author" itemprop="author">By BRET STEPHENS</span>
                     </p>
                 </div>
             </article>
@@ -554,6 +508,64 @@ var require = {
                 </div>
             </article>
         </li>
+            <li>
+                            <article class="story theme-summary">
+                                                                                                                                        <figure class="media photo" aria-label="media" role="group">
+                        <span class="visually-hidden">Photo</span>
+                        <a href="https://www.nytimes.com/2018/05/17/opinion/blue-democrats-win-hope.html" data-rref="">
+                            <img src="https://static01.nyt.com/images/2018/05/17/opinion/17blowWeb/17blowWeb-videoLarge.jpg"
+                                 srcset="https://static01.nyt.com/images/2018/05/17/opinion/17blowWeb/17blowWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/17/opinion/17blowWeb/17blowWeb-mediumThreeByTwo440.jpg 440w"
+                                 alt=""
+                            />
+                                                    </a>
+                        <figcaption class="caption" itemprop="caption description">
+                            <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Ira L. Black/Corbis, via Getty Images</span>
+                        </figcaption>
+                    </figure>
+                                <div class="story-body">
+                                            <h3 class="kicker">Op-Ed Columnist</h3>
+                                        <h2 class="headline">
+                        <a href="https://www.nytimes.com/2018/05/17/opinion/blue-democrats-win-hope.html" data-rref="">A Blue Wave of Moral Restoration</a>
+                    </h2>
+                    <p class="summary">
+                        Signs are positive for a major realignment in Washington.                                            </p>
+                    <p class="byline">
+                        <span class="freshness"><time data-utc-timestamp="1526550305" datetime="1526550305"></time></span>
+                                                    <span class="divider"></span>
+                                                <span class="author" itemprop="author">By CHARLES M. BLOW</span>
+                    </p>
+                </div>
+            </article>
+        </li>
+            <li>
+                            <article class="story theme-summary">
+                                                                                                                                        <figure class="media photo" aria-label="media" role="group">
+                        <span class="visually-hidden">Photo</span>
+                        <a href="https://www.nytimes.com/2018/05/16/opinion/gaza-palestinians-protests.html" data-rref="">
+                            <img src="https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-videoLarge.jpg"
+                                 srcset="https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/17/opinion/17stephensWeb/17stephensWeb-mediumThreeByTwo440.jpg 440w"
+                                 alt=""
+                            />
+                                                    </a>
+                        <figcaption class="caption" itemprop="caption description">
+                            <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Mahmud Hams/Agence France-Presse &mdash; Getty Images</span>
+                        </figcaption>
+                    </figure>
+                                <div class="story-body">
+                                            <h3 class="kicker">Op-Ed Columnist</h3>
+                                        <h2 class="headline">
+                        <a href="https://www.nytimes.com/2018/05/16/opinion/gaza-palestinians-protests.html" data-rref="">Gaza’s Miseries Have Palestinian Authors</a>
+                    </h2>
+                    <p class="summary">
+                        Why is nothing expected of Palestinians, and everything forgiven, while everything is expected of Israelis, and nothing forgiven?                                            </p>
+                    <p class="byline">
+                        <span class="freshness"><time data-utc-timestamp="1526497640" datetime="1526497640"></time></span>
+                                                    <span class="divider"></span>
+                                                <span class="author" itemprop="author">By BRET STEPHENS</span>
+                    </p>
+                </div>
+            </article>
+        </li>
         </ol>
 </div><!-- close template-1 -->
 
@@ -564,7 +576,92 @@ var require = {
     <article class="story theme-summary ">
                                                     <figure class="media photo" aria-label="media" role="group">
                 <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/16/opinion/college-useful-cost-jobs.html" data-tracking-index="5" data-rref="">
+                <a href="https://www.nytimes.com/2018/05/17/opinion/iraq-elections-sadr-haider-abadi.html" data-tracking-index="5" data-rref="">
+                    <img
+                        src="https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-videoLarge.jpg"
+                        srcset="https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/17/opinion/17aloraibi/17aloraibi-thumbLarge.jpg 150w"
+                        alt=""
+                    />
+                                                        </a>
+                <figcaption class="caption" itemprop="caption description">
+                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Hadi Mizban/Associated Press</span>
+                </figcaption>
+            </figure>
+                <div class="story-body">
+            <h2 class="headline">
+                <a href="https://www.nytimes.com/2018/05/17/opinion/iraq-elections-sadr-haider-abadi.html" data-tracking-index="5" data-rref="">The Way Forward in Iraq</a>
+            </h2>
+            <p class="summary">An alliance between Moktada al-Sadr and Haider al-Abadi would move Iraq toward a more stable, inclusive and less corrupt state of affairs.</p>
+            <p class="byline">
+                <span class="freshness"><time data-utc-timestamp="1526550306" datetime="1526550306"></time></span>
+                                <span class="divider"></span>
+                                <span class="author" itemprop="author">By MINA AL-ORAIBI</span>
+            </p>
+        </div>
+    </article>
+</li>
+                <li>
+    <article class="story theme-summary ">
+                                                    <figure class="media photo" aria-label="media" role="group">
+                <span class="visually-hidden">Photo</span>
+                <a href="https://www.nytimes.com/2018/05/16/opinion/workplace-discrimination-mothers.html" data-tracking-index="6" data-rref="">
+                    <img
+                        src="https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-videoLarge.jpg"
+                        srcset="https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-thumbLarge.jpg 150w"
+                        alt=""
+                    />
+                                                        </a>
+                <figcaption class="caption" itemprop="caption description">
+                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Gravity Images/The Image Bank, via Getty Images</span>
+                </figcaption>
+            </figure>
+                <div class="story-body">
+            <h2 class="headline">
+                <a href="https://www.nytimes.com/2018/05/16/opinion/workplace-discrimination-mothers.html" data-tracking-index="6" data-rref="">The Open Secret of Anti-Mom Bias at Work</a>
+            </h2>
+            <p class="summary">We’re witnessing a flood of stories condemning gender discrimination in the workplace. But bias against mothers remains casual and unapologetic.</p>
+            <p class="byline">
+                <span class="freshness"><time data-utc-timestamp="1526497203" datetime="1526497203"></time></span>
+                                <span class="divider"></span>
+                                <span class="author" itemprop="author">By KATHERINE GOLDSTEIN</span>
+            </p>
+        </div>
+    </article>
+</li>
+                <li>
+    <article class="story theme-summary ">
+                    <h3 class="kicker">The Stone</h3>
+                                                    <figure class="media photo" aria-label="media" role="group">
+                <span class="visually-hidden">Photo</span>
+                <a href="https://www.nytimes.com/2018/05/16/opinion/junot-diaz-metoo.html" data-tracking-index="7" data-rref="">
+                    <img
+                        src="https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-videoLarge.jpg"
+                        srcset="https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16stone-sub/16stone-sub-thumbLarge.jpg 150w"
+                        alt=""
+                    />
+                                                        </a>
+                <figcaption class="caption" itemprop="caption description">
+                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Michael Loccisano/Getty Images for The Norman Mailer Center</span>
+                </figcaption>
+            </figure>
+                <div class="story-body">
+            <h2 class="headline">
+                <a href="https://www.nytimes.com/2018/05/16/opinion/junot-diaz-metoo.html" data-tracking-index="7" data-rref="">This Is Not Just About Junot Díaz</a>
+            </h2>
+            <p class="summary">All of us — including the #MeToo movement — need to think about a future in which repentant sexists have a place.</p>
+            <p class="byline">
+                <span class="freshness"><time data-utc-timestamp="1526512496" datetime="1526512496"></time></span>
+                                <span class="divider"></span>
+                                <span class="author" itemprop="author">By LINDA MARTÍN ALCOFF</span>
+            </p>
+        </div>
+    </article>
+</li>
+                <li>
+    <article class="story theme-summary ">
+                                                    <figure class="media photo" aria-label="media" role="group">
+                <span class="visually-hidden">Photo</span>
+                <a href="https://www.nytimes.com/2018/05/16/opinion/college-useful-cost-jobs.html" data-tracking-index="8" data-rref="">
                     <img
                         src="https://static01.nyt.com/images/2018/05/16/opinion/16shell/16shell-videoLarge.jpg"
                         srcset="https://static01.nyt.com/images/2018/05/16/opinion/16shell/16shell-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16shell/16shell-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16shell/16shell-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16shell/merlin_138250296_98c59d68-d662-4018-9c7c-0cfafe0e3227-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16shell/16shell-thumbLarge.jpg 150w"
@@ -577,7 +674,7 @@ var require = {
             </figure>
                 <div class="story-body">
             <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/16/opinion/college-useful-cost-jobs.html" data-tracking-index="5" data-rref="">College May Not Be Worth It Anymore</a>
+                <a href="https://www.nytimes.com/2018/05/16/opinion/college-useful-cost-jobs.html" data-tracking-index="8" data-rref="">College May Not Be Worth It Anymore</a>
             </h2>
             <p class="summary">For the poor, higher education may hurt more than it helps.</p>
             <p class="byline">
@@ -592,7 +689,7 @@ var require = {
     <article class="story theme-summary ">
                                                     <figure class="media photo" aria-label="media" role="group">
                 <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/16/opinion/scott-kelly-tom-wolfe-.html" data-tracking-index="6" data-rref="">
+                <a href="https://www.nytimes.com/2018/05/16/opinion/scott-kelly-tom-wolfe-.html" data-tracking-index="9" data-rref="">
                     <img
                         src="https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-videoLarge.jpg"
                         srcset="https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16kelly/16kelly-thumbLarge.jpg 150w"
@@ -605,100 +702,13 @@ var require = {
             </figure>
                 <div class="story-body">
             <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/16/opinion/scott-kelly-tom-wolfe-.html" data-tracking-index="6" data-rref="">Scott Kelly: How Tom Wolfe Changed My Life</a>
+                <a href="https://www.nytimes.com/2018/05/16/opinion/scott-kelly-tom-wolfe-.html" data-tracking-index="9" data-rref="">Scott Kelly: How Tom Wolfe Changed My Life</a>
             </h2>
             <p class="summary">“The Right Stuff” helped me, a terrible student with severe attention problems, find purpose and become an astronaut.</p>
             <p class="byline">
                 <span class="freshness"><time data-utc-timestamp="1526514396" datetime="1526514396"></time></span>
                                 <span class="divider"></span>
                                 <span class="author" itemprop="author">By SCOTT KELLY</span>
-            </p>
-        </div>
-    </article>
-</li>
-                <li>
-    <article class="story theme-summary ">
-                    <h3 class="kicker">Contributing Op-Ed Writer</h3>
-                                                    <figure class="media photo" aria-label="media" role="group">
-                <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/16/opinion/greek-prophet-sex-tiresias.html" data-tracking-index="7" data-rref="">
-                    <img
-                        src="https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-videoLarge.jpg"
-                        srcset="https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-thumbLarge.jpg 150w"
-                        alt=""
-                    />
-                                                        </a>
-                <figcaption class="caption" itemprop="caption description">
-                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>G&amp;eacute;rard Blot/RMN-Grand Palais, via Art Resource, NY</span>
-                </figcaption>
-            </figure>
-                <div class="story-body">
-            <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/16/opinion/greek-prophet-sex-tiresias.html" data-tracking-index="7" data-rref="">What a Greek Prophet Can Tell Us About Sex</a>
-            </h2>
-            <p class="summary">Asking whether men or women enjoy sex more is pointless.</p>
-            <p class="byline">
-                <span class="freshness"><time data-utc-timestamp="1526463905" datetime="1526463905"></time></span>
-                                <span class="divider"></span>
-                                <span class="author" itemprop="author">By JENNIFER FINNEY BOYLAN</span>
-            </p>
-        </div>
-    </article>
-</li>
-                <li>
-    <article class="story theme-summary ">
-                    <h3 class="kicker">Op-Ed Columnist</h3>
-                                                    <figure class="media photo" aria-label="media" role="group">
-                <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/15/opinion/trump-obama-legacy-trashing.html" data-tracking-index="8" data-rref="">
-                    <img
-                        src="https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-videoLarge.jpg"
-                        srcset="https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/merlin_114224338_c8a01d2b-78a9-4691-87b3-f9ca4f36362f-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-thumbLarge.jpg 150w"
-                        alt=""
-                    />
-                                                        </a>
-                <figcaption class="caption" itemprop="caption description">
-                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Stephen Crowley/The New York Times</span>
-                </figcaption>
-            </figure>
-                <div class="story-body">
-            <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/15/opinion/trump-obama-legacy-trashing.html" data-tracking-index="8" data-rref="">Trump’s Dream Come True: Trashing Obama and Iran in One Move</a>
-            </h2>
-            <p class="summary">The president could have protected American interests without scrapping the nuclear deal. But that’s not all he wanted.</p>
-            <p class="byline">
-                <span class="freshness"><time data-utc-timestamp="1526425176" datetime="1526425176"></time></span>
-                                <span class="divider"></span>
-                                <span class="author" itemprop="author">By THOMAS L. FRIEDMAN</span>
-            </p>
-        </div>
-    </article>
-</li>
-                <li>
-    <article class="story theme-summary ">
-                    <h3 class="kicker">Op-Docs</h3>
-                                                    <figure class="media photo" aria-label="media" role="group">
-                <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/15/opinion/syria-canada-samantha-power-highschool.html" data-tracking-index="9" data-rref="">
-                    <img
-                        src="https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-videoLarge.jpg"
-                        srcset="https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/15/opinion/15opdoc-syria-img/15opdoc-syria-img-thumbLarge.jpg 150w"
-                        alt=""
-                    />
-                                                        </a>
-                <figcaption class="caption" itemprop="caption description">
-                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span>Luisa Conlon, Hanna Miller and Lacy Jane Roberts</span>
-                </figcaption>
-            </figure>
-                <div class="story-body">
-            <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/15/opinion/syria-canada-samantha-power-highschool.html" data-tracking-index="9" data-rref="">A Teenager Starting Over in Canada</a>
-            </h2>
-            <p class="summary">Ibraheem was just a regular kid — until he lost everything.</p>
-            <p class="byline">
-                <span class="freshness"><time data-utc-timestamp="1526410399" datetime="1526410399"></time></span>
-                                <span class="divider"></span>
-                                <span class="author" itemprop="author">By SAMANTHA POWER</span>
             </p>
         </div>
     </article>
@@ -874,6 +884,35 @@ var require = {
                     <h3 class="kicker">Op-Ed Columnist</h3>
                                                     <figure class="media photo" aria-label="media" role="group">
                 <span class="visually-hidden">Photo</span>
+                <a href="https://www.nytimes.com/2018/05/17/opinion/trump-lies-media.html" data-tracking-index="1" data-rref="">
+                    <img
+                        src="https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-videoLarge.jpg"
+                        srcset="https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/17/opinion/17leonhardt-newsletter/merlin_138262323_a3c2a715-f08b-4108-88a2-82496b1c8e83-thumbLarge.jpg 150w"
+                        alt=""
+                    />
+                                                        </a>
+                <figcaption class="caption" itemprop="caption description">
+                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span></span>
+                </figcaption>
+            </figure>
+                <div class="story-body">
+            <h2 class="headline">
+                <a href="https://www.nytimes.com/2018/05/17/opinion/trump-lies-media.html" data-tracking-index="1" data-rref="">Trump’s Latest Lies — and His Media Machine</a>
+            </h2>
+            <p class="summary">Rex Tillerson’s indirect criticism now isn’t nearly sufficient.</p>
+            <p class="byline">
+                <span class="freshness"><time data-utc-timestamp="1526561563" datetime="1526561563"></time></span>
+                                <span class="divider"></span>
+                                <span class="author" itemprop="author">By DAVID LEONHARDT</span>
+            </p>
+        </div>
+    </article>
+</li>
+                <li>
+    <article class="story theme-summary ">
+                    <h3 class="kicker">Op-Ed Columnist</h3>
+                                                    <figure class="media photo" aria-label="media" role="group">
+                <span class="visually-hidden">Photo</span>
                 <a href="https://www.nytimes.com/2018/05/16/opinion/americas-dismal-turning-point.html" data-tracking-index="1" data-rref="">
                     <img
                         src="https://static01.nyt.com/images/2018/05/16/opinion/16krugmanWeb/16krugmanWeb-videoLarge.jpg"
@@ -961,10 +1000,10 @@ var require = {
                     <h3 class="kicker">Op-Ed Columnist</h3>
                                                     <figure class="media photo" aria-label="media" role="group">
                 <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/15/opinion/nba-becky-hammon-women-bucks.html" data-tracking-index="1" data-rref="">
+                <a href="https://www.nytimes.com/2018/05/15/opinion/trump-obama-legacy-trashing.html" data-tracking-index="1" data-rref="">
                     <img
-                        src="https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-videoLarge.jpg"
-                        srcset="https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/merlin_97480982_e3a5a247-4279-4e21-b5b4-3f632457b1d2-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-thumbLarge.jpg 150w"
+                        src="https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-videoLarge.jpg"
+                        srcset="https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/merlin_114224338_c8a01d2b-78a9-4691-87b3-f9ca4f36362f-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/16/opinion/16friedmanWeb/16friedmanWeb-thumbLarge.jpg 150w"
                         alt=""
                     />
                                                         </a>
@@ -974,42 +1013,13 @@ var require = {
             </figure>
                 <div class="story-body">
             <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/15/opinion/nba-becky-hammon-women-bucks.html" data-tracking-index="1" data-rref="">The Feminist Enlightenment of Giant Jocks</a>
+                <a href="https://www.nytimes.com/2018/05/15/opinion/trump-obama-legacy-trashing.html" data-tracking-index="1" data-rref="">Trump’s Dream Come True: Trashing Obama and Iran in One Move</a>
             </h2>
-            <p class="summary">In the macho realm of men’s professional basketball, a woman blazes the ultimate trail.</p>
+            <p class="summary">The president could have protected American interests without scrapping the nuclear deal. But that’s not all he wanted.</p>
             <p class="byline">
-                <span class="freshness"><time data-utc-timestamp="1526424904" datetime="1526424904"></time></span>
+                <span class="freshness"><time data-utc-timestamp="1526425176" datetime="1526425176"></time></span>
                                 <span class="divider"></span>
-                                <span class="author" itemprop="author">By FRANK BRUNI</span>
-            </p>
-        </div>
-    </article>
-</li>
-                <li>
-    <article class="story theme-summary ">
-                    <h3 class="kicker">Op-Ed Columnist</h3>
-                                                    <figure class="media photo" aria-label="media" role="group">
-                <span class="visually-hidden">Photo</span>
-                <a href="https://www.nytimes.com/2018/05/15/opinion/left-center-democrats-primaries.html" data-tracking-index="1" data-rref="">
-                    <img
-                        src="https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/15leonhardt-newsletter-videoLarge.jpg"
-                        srcset="https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/15leonhardt-newsletter-videoLarge.jpg 768w, https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/15leonhardt-newsletter-mediumThreeByTwo440.jpg 440w, https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/15leonhardt-newsletter-mediumThreeByTwo225.jpg 225w, https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/merlin_138165564_3306869c-0530-44b2-abfe-7869e1177024-hpSmall.jpg 163w, https://static01.nyt.com/images/2018/05/15/opinion/15leonhardt-newsletter/15leonhardt-newsletter-thumbLarge.jpg 150w"
-                        alt=""
-                    />
-                                                        </a>
-                <figcaption class="caption" itemprop="caption description">
-                    <span class="credit" itemprop="copyrightHolder"><span class="visually-hidden">Credit</span></span>
-                </figcaption>
-            </figure>
-                <div class="story-body">
-            <h2 class="headline">
-                <a href="https://www.nytimes.com/2018/05/15/opinion/left-center-democrats-primaries.html" data-tracking-index="1" data-rref="">Left vs. Center for Democrats Tonight</a>
-            </h2>
-            <p class="summary">Also: Could the Jerusalem embassy actually be good for peace?</p>
-            <p class="byline">
-                <span class="freshness"><time data-utc-timestamp="1526387201" datetime="1526387201"></time></span>
-                                <span class="divider"></span>
-                                <span class="author" itemprop="author">By DAVID LEONHARDT</span>
+                                <span class="author" itemprop="author">By THOMAS L. FRIEDMAN</span>
             </p>
         </div>
     </article>
@@ -1104,25 +1114,6 @@ var require = {
     </footer>
 </article>
 </li>
-                <li id="story-id-100000005901600"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
-    <div class="story-body">
-        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/workplace-discrimination-mothers.html" >
-            <div class="story-meta">
-                                <h2 class="headline" itemprop="headline">
-                    The Open Secret of Anti-Mom Bias at Work                </h2>
-                <p class="summary" itemprop="description">We’re witnessing a flood of stories condemning gender discrimination in the workplace. But bias against mothers remains casual and unapologetic.</p>
-                                    <p class="byline" itemprop="author">By KATHERINE GOLDSTEIN</p>
-                            </div><!-- close story-meta -->
-                            <div class="wide-thumb">
-                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
-                                                        </div><!-- close wide-thumb -->
-                    </a>
-    </div><!-- close story-body -->
-    <footer class="story-footer">
-        <time class="dateline" datetime="2018-05-16" itemprop="dateModified" content="2018-05-16">May 16, 2018</time>
-    </footer>
-</article>
-</li>
                 <li id="story-id-100000005889662"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="story-body">
         <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/swamp-washington.html" >
@@ -1199,6 +1190,26 @@ var require = {
     </footer>
 </article>
 </li>
+                <li id="story-id-100000005899009"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
+    <div class="story-body">
+        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/greek-prophet-sex-tiresias.html" >
+            <div class="story-meta">
+                                    <h3 class="kicker ">Contributing Op-Ed Writer</h3>
+                                <h2 class="headline" itemprop="headline">
+                    What a Greek Prophet Can Tell Us About Sex                </h2>
+                <p class="summary" itemprop="description">Asking whether men or women enjoy sex more is pointless.</p>
+                                    <p class="byline" itemprop="author">By JENNIFER FINNEY BOYLAN</p>
+                            </div><!-- close story-meta -->
+                            <div class="wide-thumb">
+                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
+                                                        </div><!-- close wide-thumb -->
+                    </a>
+    </div><!-- close story-body -->
+    <footer class="story-footer">
+        <time class="dateline" datetime="2018-05-16" itemprop="dateModified" content="2018-05-16">May 16, 2018</time>
+    </footer>
+</article>
+</li>
                 <li id="story-id-100000005900340"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="story-body">
         <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/ramadan-spirit-america.html" >
@@ -1261,6 +1272,26 @@ var require = {
             </ol>
     <ol id="story-menu-additional-set-latest" class="story-menu theme-stream additional-set hidden">
         <li id="latest-page-marker" class="page-marker invisible-minimized"></li>
+                <li id="story-id-100000005902015"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
+    <div class="story-body">
+        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/opinion/nba-becky-hammon-women-bucks.html" >
+            <div class="story-meta">
+                                    <h3 class="kicker ">Op-Ed Columnist</h3>
+                                <h2 class="headline" itemprop="headline">
+                    The Feminist Enlightenment of Giant Jocks                </h2>
+                <p class="summary" itemprop="description">In the macho realm of men’s professional basketball, a woman blazes the ultimate trail.</p>
+                                    <p class="byline" itemprop="author">By FRANK BRUNI</p>
+                            </div><!-- close story-meta -->
+                            <div class="wide-thumb">
+                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
+                                                        </div><!-- close wide-thumb -->
+                    </a>
+    </div><!-- close story-body -->
+    <footer class="story-footer">
+        <time class="dateline" datetime="2018-05-15" itemprop="dateModified" content="2018-05-15">May 15, 2018</time>
+    </footer>
+</article>
+</li>
                 <li id="story-id-100000005896890"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
     <div class="story-body">
         <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/insider/op-ed-editor-by-day-whiskey-connoisseur-by-night.html" >
@@ -1424,25 +1455,6 @@ var require = {
                             </div><!-- close story-meta -->
                             <div class="wide-thumb">
                     <img role="presentation" src="https://static01.nyt.com/images/2018/05/08/upshot/08up-healthmarijuana-print/merlin_137124408_83147776-0837-4026-80b1-25585118b6e1-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
-                                                        </div><!-- close wide-thumb -->
-                    </a>
-    </div><!-- close story-body -->
-    <footer class="story-footer">
-        <time class="dateline" datetime="2018-05-15" itemprop="dateModified" content="2018-05-15">May 15, 2018</time>
-    </footer>
-</article>
-</li>
-                <li id="story-id-100000005899491"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
-    <div class="story-body">
-        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/opinion/argentina-abortion-ni-una-menos.html" >
-            <div class="story-meta">
-                                <h2 class="headline" itemprop="headline">
-                    Misogyny, Femicide and an Unexpected Abortion Debate                </h2>
-                <p class="summary" itemprop="description">Activists fueled by anger over the murders of hundreds of Argentine women have become a political force that could legalize abortion on Pope Francis’ home turf.</p>
-                                    <p class="byline" itemprop="author">By JORDANA TIMERMAN</p>
-                            </div><!-- close story-meta -->
-                            <div class="wide-thumb">
-                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/15/opinion/15timerman3/15timerman3-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
                                                         </div><!-- close wide-thumb -->
                     </a>
     </div><!-- close story-body -->
@@ -1581,7 +1593,7 @@ require(['foundation/main'], function() {
         <div class="stream-controls">
             <header class="stream-search-header section-header" aria-live="polite" aria-atomic="true">
                 <h2 class="section-heading visually-hidden">Search Articles</h2>
-                                <h3 class="stream-search-heading section-heading"><span class="result-count">276933 results</span> <span id="results-for-word" class="hidden">for</span> <strong class="search-term"></strong> <span class="stream-sort">sorted by <button type="button" class="button stream-sort-button"><span class="button-text">newest</span><i class="icon caret-icon"></i></button></span></h3>
+                                <h3 class="stream-search-heading section-heading"><span class="result-count">276936 results</span> <span id="results-for-word" class="hidden">for</span> <strong class="search-term"></strong> <span class="stream-sort">sorted by <button type="button" class="button stream-sort-button"><span class="button-text">newest</span><i class="icon caret-icon"></i></button></span></h3>
                             </header>
         </div><!-- close stream-controls -->
 
@@ -1619,25 +1631,6 @@ require(['foundation/main'], function() {
                             </div><!-- close story-meta -->
                             <div class="wide-thumb">
                     <img role="presentation" src="https://static01.nyt.com/images/2018/05/16/world/16korea-print/merlin_138165882_6583b542-2c91-4103-b353-8c776e7016e5-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
-                                                        </div><!-- close wide-thumb -->
-                    </a>
-    </div><!-- close story-body -->
-    <footer class="story-footer">
-        <time class="dateline" datetime="2018-05-16" itemprop="dateModified" content="2018-05-16">May 16, 2018</time>
-    </footer>
-</article>
-</li>
-                <li id="story-id-100000005901600"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
-    <div class="story-body">
-        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/workplace-discrimination-mothers.html" >
-            <div class="story-meta">
-                                <h2 class="headline" itemprop="headline">
-                    The Open Secret of Anti-Mom Bias at Work                </h2>
-                <p class="summary" itemprop="description">We’re witnessing a flood of stories condemning gender discrimination in the workplace. But bias against mothers remains casual and unapologetic.</p>
-                                    <p class="byline" itemprop="author">By KATHERINE GOLDSTEIN</p>
-                            </div><!-- close story-meta -->
-                            <div class="wide-thumb">
-                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/16/opinion/16goldstein/16goldstein-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
                                                         </div><!-- close wide-thumb -->
                     </a>
     </div><!-- close story-body -->
@@ -1722,6 +1715,26 @@ require(['foundation/main'], function() {
     </footer>
 </article>
 </li>
+                <li id="story-id-100000005899009"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
+    <div class="story-body">
+        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/greek-prophet-sex-tiresias.html" >
+            <div class="story-meta">
+                                    <h3 class="kicker ">Contributing Op-Ed Writer</h3>
+                                <h2 class="headline" itemprop="headline">
+                    What a Greek Prophet Can Tell Us About Sex                </h2>
+                <p class="summary" itemprop="description">Asking whether men or women enjoy sex more is pointless.</p>
+                                    <p class="byline" itemprop="author">By JENNIFER FINNEY BOYLAN</p>
+                            </div><!-- close story-meta -->
+                            <div class="wide-thumb">
+                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/16/opinion/16Boylan/16Boylan-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
+                                                        </div><!-- close wide-thumb -->
+                    </a>
+    </div><!-- close story-body -->
+    <footer class="story-footer">
+        <time class="dateline" datetime="2018-05-16" itemprop="dateModified" content="2018-05-16">May 16, 2018</time>
+    </footer>
+</article>
+</li>
                 <li id="story-id-100000005900340"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="story-body">
         <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/16/opinion/ramadan-spirit-america.html" >
@@ -1783,6 +1796,26 @@ require(['foundation/main'], function() {
                     </ol>
     <ol id="story-menu-additional-set-search" class="story-menu theme-stream additional-set hidden">
         <li id="search-page-marker" class="page-marker invisible-minimized"></li>
+                <li id="story-id-100000005902015"><article class="story theme-summary  has-kicker" itemscope itemtype="http://schema.org/NewsArticle">
+    <div class="story-body">
+        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/opinion/nba-becky-hammon-women-bucks.html" >
+            <div class="story-meta">
+                                    <h3 class="kicker ">Op-Ed Columnist</h3>
+                                <h2 class="headline" itemprop="headline">
+                    The Feminist Enlightenment of Giant Jocks                </h2>
+                <p class="summary" itemprop="description">In the macho realm of men’s professional basketball, a woman blazes the ultimate trail.</p>
+                                    <p class="byline" itemprop="author">By FRANK BRUNI</p>
+                            </div><!-- close story-meta -->
+                            <div class="wide-thumb">
+                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/15/opinion/15bruniWeb/15bruniWeb-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
+                                                        </div><!-- close wide-thumb -->
+                    </a>
+    </div><!-- close story-body -->
+    <footer class="story-footer">
+        <time class="dateline" datetime="2018-05-15" itemprop="dateModified" content="2018-05-15">May 15, 2018</time>
+    </footer>
+</article>
+</li>
                 <li id="story-id-100000005896890"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
     <div class="story-body">
         <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/insider/op-ed-editor-by-day-whiskey-connoisseur-by-night.html" >
@@ -1946,25 +1979,6 @@ require(['foundation/main'], function() {
                             </div><!-- close story-meta -->
                             <div class="wide-thumb">
                     <img role="presentation" src="https://static01.nyt.com/images/2018/05/08/upshot/08up-healthmarijuana-print/merlin_137124408_83147776-0837-4026-80b1-25585118b6e1-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
-                                                        </div><!-- close wide-thumb -->
-                    </a>
-    </div><!-- close story-body -->
-    <footer class="story-footer">
-        <time class="dateline" datetime="2018-05-15" itemprop="dateModified" content="2018-05-15">May 15, 2018</time>
-    </footer>
-</article>
-</li>
-                <li id="story-id-100000005899491"><article class="story theme-summary  " itemscope itemtype="http://schema.org/NewsArticle">
-    <div class="story-body">
-        <a class="story-link" data-rref="" href="https://www.nytimes.com/2018/05/15/opinion/argentina-abortion-ni-una-menos.html" >
-            <div class="story-meta">
-                                <h2 class="headline" itemprop="headline">
-                    Misogyny, Femicide and an Unexpected Abortion Debate                </h2>
-                <p class="summary" itemprop="description">Activists fueled by anger over the murders of hundreds of Argentine women have become a political force that could legalize abortion on Pope Francis’ home turf.</p>
-                                    <p class="byline" itemprop="author">By JORDANA TIMERMAN</p>
-                            </div><!-- close story-meta -->
-                            <div class="wide-thumb">
-                    <img role="presentation" src="https://static01.nyt.com/images/2018/05/15/opinion/15timerman3/15timerman3-mediumThreeByTwo210.jpg" alt="" itemprop="thumbnailUrl" />
                                                         </div><!-- close wide-thumb -->
                     </a>
     </div><!-- close story-body -->
