@@ -78,6 +78,7 @@ function getUrl(url, output) {
             const dom = new JSDOM(html);
             var document = dom.window.document;
             var head = dom.window.document.getElementsByTagName('head')[0];
+            var body = dom.window.document.getElementsByTagName('body')[0];
             var base_url = dom.window.location.origin;
             console.log(`base_url = ${base_url}`)
             head.append(JSDOM.fragment(
@@ -87,11 +88,21 @@ function getUrl(url, output) {
                 `a:hover {color:#ffcc00;}\n`+
                 `</style>\n`));
 
+            head.append(JSDOM.fragment(
+                `\n<style type="text/css" media="screen">\n`+
+                `p.mbee{color:green;font-size: 160%;}\n`+
+                `</style>\n`));
+                
+            //body.append(JSDOM.fragment('<b>XXXXXXXXXXXXXXXX</b>'));
+            //body.append(JSDOM.fragment('<p>XXXXXXXXXXXXXXXXXXXX</p>'));
+
             cleanup(document);
-            //var $ = cheerio.load(html);
-            // F    inally, we'll define the variables we're going to capture
-    // var title, release, rating;
-    //         var json = { title : "", release : "", rating : ""};
+            body.append(JSDOM.fragment(`<p class="mbee">XXXXXXXXXXXXXXXXXXXX
+            <br/>
+            YYYYYYYYYYY
+            <a href="tbd">tbd</a>
+            </p>`));
+            
 
             bobo('html.html', html);
             //bobo('../output/html2.html', dom.serialize() );

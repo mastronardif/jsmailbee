@@ -59,6 +59,7 @@ function getUrl(url, output) {
             const dom = new JSDOM(html);
             var document = dom.window.document;
             var head = dom.window.document.getElementsByTagName('head')[0];
+            var body = dom.window.document.getElementsByTagName('body')[0];
             var base_url = dom.window.location.origin;
 
             head.append(JSDOM.fragment(
@@ -68,8 +69,18 @@ function getUrl(url, output) {
                 `a:hover {color:#ffcc00;}\n`+
                 `</style>\n`));
 
-            cleanup(document);
+            head.append(JSDOM.fragment(
+                `\n<style type="text/css" media="screen">\n`+                
+                `p.mbee{color:green;font-size: 90%;}\n`+
+                `</style>\n`));
 
+            cleanup(document);
+            body.append(JSDOM.fragment(`<p class="mbee">Thank you for using
+            <br/> Mailbee <br/>
+            ${url}
+            <a href="${url}">${url}</a>
+            </p>`));
+            
             bobo(output.path+'html.html', html);
 			switch (output.outType) {
 				case 'file':
