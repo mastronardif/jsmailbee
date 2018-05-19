@@ -55,7 +55,7 @@ function myGetBaseRef(url) {
     var myRe = /.*\//;
     var baseRef = myRe.exec(url);
 
-    if (baseRef[0] === "https://" || baseRef[0] === "http://") {
+    if (baseRef && (baseRef[0] === "https://" || baseRef[0] === "http://") ) {
         baseRef = url;
     }
   

@@ -40,8 +40,9 @@ function doFunction(route, url)
 
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {
-      console.log(this.responseText);
+      console.log(this.responseText);            
     }
+    document.getElementById("idMessage").value =this.responseText;    
   });
 
   //xhr.open("POST", "http://localhost:3000/ping");
