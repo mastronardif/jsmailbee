@@ -14,7 +14,8 @@ var options = {
     userAgent: "Mellblomenator/9000",
     includeNodeLocations: true
   };
-const output = '../output/';
+//const output = '../output/';
+const output = './uploads/';
 var g = {
     //mailTo: "ah@joeschedule.mailgun.org,mastronardif@gmail.com,jimmy@joeschedule.mailgun.org",
     mailTo:  "ah@joeschedule.mailgun.org",
@@ -35,18 +36,27 @@ var test = ["http://www.drudgereport.com",
 'https://www.google.com/url?rct=j&sa=t&url=https://www.techrepublic.com/article/how-to-get-a-job-in-cloud-computing-10-skills-to-master/&ct=ga&cd=CAEYASoUMTc0MzU1ODExMzM3MTU5MjM4OTAyHDkwMjI3NTZiN2E3MmQ2Yjg6Y29tOmVuOlVTOlI&usg=AFQjCNH5q1Kcxm05dxfHkCpa6RyzVvgRvQ'
 ];
 
+for (let j = 0; j < process.argv.length; j++) {  
+    console.log(j + ' -> ' + (process.argv[j]));
+}
+
+if (process.argv.length > 2) {
+    test[1] = process.argv[2];
+}
+
 //var gurl = "https://marketwatch.com"; // 'https://slashdot.org/';//'https://slashdot.org/'; //'http://www.drudgereport.com/'; //'https://slashdot.org/';//'http://www.imdb.com/title/tt1229340/';
 g.Url=  test[1]; //'https://nodejs.org/docs/latest/api/url.html#url_url_protocol'; //"https://marketwatch.com"; //"https://slashdot.org";
 g.baseHRef= myGetBaseRef(test[1]); //'https://www.w3schools.com/jsref/';//test[1]; //'http://www.drudgereport.com';//'https://slashdot.org/';//'https://nodejs.org/docs/latest/api/';
 g.protocol= url.parse(g.Url).protocol ? url.parse(g.Url).protocol : 'https';
 
 //getUrl(g.Url);
-var testType = {outType: 'file', path: '../output/html2.html'};
+var testType = {outType: 'file', path: 'html2.html'};
 //var testType = {outType: 'default'};
 
 readUrl(g.Url, testType);
 
 function readUrl(url, output) {
+    console.log(`\t**** readUrl  ${url}`)
 	getUrl(url, output);	
 }
 
