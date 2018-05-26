@@ -14,6 +14,49 @@ module.exports.ping = function (req, res) {
     //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
     replyController.mailStore(req, res);
 };
+module.exports.pingLemur = function (req, res) {
+    console.log("ping-controller.pingLemur");
+    console.log(req.params);
+    //console.log(req);
+    console.log(JSON.stringify(req.body) );
+
+    var postData = 
+    {
+        "properties":{},
+        "routing_key":"task_queue",
+        "payload":`"<tag>${req.body.tagurl}}</tag>"`,
+        "payload_encoding":"string"
+    };
+    //var results = {'query': req.query, 'body':req.body};
+    //res.json(results);
+    //var http = require("https");
+    var request = require('request');
+    var options = {
+      "method": "POST",
+      "hostname": "wasp.rmq.cloudamqp.com",
+      "port": null,
+      "path": "/api/exchanges/pyxvbrth/amq.default/publish",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        'Content-Length': postData.length,
+        "cache-control": "no-cache"
+      },
+      json: postData
+    };
+    
+    request.post(
+        'https://pyxvbrth:o3f6R_94tCWiRMYUL5KrZPHEVo6Foz5y@wasp.rmq.cloudamqp.com/api/exchanges/pyxvbrth/amq.default/publish',
+        { json: postData },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body)
+            }
+            res.json(body);
+        }
+    );
+
+
+};
 
 module.exports.pingjp = function (req, res) {
     console.log("pingjp-controller");

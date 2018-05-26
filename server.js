@@ -54,6 +54,7 @@ router.all ('/read', readController.read);
 
 //router.all ('/pingcors', pingController.pingcors);
 router.all ('/ping', pingController.ping);
+router.all ('/pingLemur', pingController.pingLemur);
 
 //router.get ('/pingjp', pingController.pingjp);
 //app.all ('/ping',stormpath.loginRequired, pingController.ping);console.log(req.query);

@@ -1,40 +1,98 @@
-<!DOCTYPE html><html><head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="IE=edge" http-equiv="X-UA-Compatible">
-<title>mod-CloudAMQP Console Error</title>
-<link href="https://customer.cloudamqp.com/css/site.css?982297" rel="stylesheet" type="text/css">
-<link href="/css/site.css" rel="stylesheet" type="text/css">
-<link href="/favicon.ico" rel="icon" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic&amp;amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-hqbuBb0QOOmiWgl8a1V1N5q6TI/G0A2hVt/lCFYafR+fYsuXeRUcsdcb/yUyVEHYXktmUXl0Mx9s/BOUNZVq4w==" rel="stylesheet" href="https://assets-cdn.github.com/assets/frameworks-23c9e7262eee71bc6f67f6950190a162.css">
+  <link crossorigin="anonymous" media="all" integrity="sha512-eIYYJSKqUtZ1wca1cjvRpEFVDVFlRed6ZF1jtZ0E+plPCBYpZd78jUtSlGbFFouH9uhlhGRztTLDLwmNU6rL8w==" rel="stylesheet" href="https://assets-cdn.github.com/assets/github-50c729cf7e55c7554c6d0ceae2a0e938.css">
+  
+  
+  <link crossorigin="anonymous" media="all" integrity="sha512-cCY9KKeDzfGd+snVDZwcOIrTjK+JAFW4FR1c4OGJo1Z2QZNbAGVD6JlcnHL19LBcdByWHVxwrAPwigT/v/DWyQ==" rel="stylesheet" href="https://assets-cdn.github.com/assets/site-7472e7b4603d4095447d49d428375ab8.css">
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>mod-rabbitmq-tutorials/javascript-nodejs/src at master · rabbitmq/rabbitmq-tutorials · GitHub</title>
+    <meta name="description" content="GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/96669?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="rabbitmq/rabbitmq-tutorials"><meta property="og:url" content="https://github.com/rabbitmq/rabbitmq-tutorials"><meta property="og:description" content="rabbitmq-tutorials - Tutorials for using RabbitMQ in various ways">
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="EE74:53A6:1A50AF6:30CEC8E:5B0976FC" data-pjax-transient="">
+
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-request_id" content="EE74:53A6:1A50AF6:30CEC8E:5B0976FC"><meta name="octolytics-dimension-region_edge" content="iad"><meta name="octolytics-dimension-region_render" content="iad">
+<meta name="analytics-location" content="/<user-name>/<repo-name>/files/disambiguate" data-pjax-transient="true">
 
 
 
 
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
 
 
-<style>
-  #appharbor li { line-height: inherit; }
-  .only-dedicated {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    cursor: not-allowed;
-  }
-  .only-dedicated .lead {
-    width: 100%;
-    text-align: center;
-    margin: 30vh auto;
-    color: white;
-    position: fixed;
-    text-shadow: 2px 2px black;
-  }
-</style>
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="ZjQxOTdmODg1Mjg1ZWMyMTBiYTIxM2FhMTM5ZDdkNjliMTVhN2FjOTY4MWQ0NDUxNWE5ZTI2N2E2ZjcwN2ZjNnx7InJlbW90ZV9hZGRyZXNzIjoiNzMuMTc4LjM3LjY1IiwicmVxdWVzdF9pZCI6IkVFNzQ6NTNBNjoxQTUwQUY2OjMwQ0VDOEU6NUIwOTc2RkMiLCJ0aW1lc3RhbXAiOjE1MjczNDY5NDEsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_INSIGHTS,MARKETPLACE_INSIGHTS_CONVERSION_PERCENTAGES,JUMP_TO">
+
+  <meta name="html-safe-nonce" content="07823487472b5a06e2bdb653a96eff7aa3c50857">
+
+  <meta http-equiv="x-pjax-version" content="cb731f9d27da2ae3c5aaf1474ffe5d0a">
+  
+
+      <link href="https://github.com/rabbitmq/rabbitmq-tutorials/commits/master.atom" rel="alternate" title="Recent Commits to rabbitmq-tutorials:master" type="application/atom+xml">
+
+  <meta name="description" content="rabbitmq-tutorials - Tutorials for using RabbitMQ in various ways">
+  <meta name="go-import" content="github.com/rabbitmq/rabbitmq-tutorials git https://github.com/rabbitmq/rabbitmq-tutorials.git">
+
+  <meta name="octolytics-dimension-user_id" content="96669"><meta name="octolytics-dimension-user_login" content="rabbitmq"><meta name="octolytics-dimension-repository_id" content="927454"><meta name="octolytics-dimension-repository_nwo" content="rabbitmq/rabbitmq-tutorials"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="927454"><meta name="octolytics-dimension-repository_network_root_nwo" content="rabbitmq/rabbitmq-tutorials"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    <link rel="canonical" href="https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/src" data-pjax-transient="">
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
 
 
 
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+
+  
 <style type="text/css" media="screen">
 a:link {color:#ff0000;}
 a:visited {color:#0000ff;}
@@ -42,143 +100,615 @@ a:hover {color:#ffcc00;}
 </style>
 
 <style type="text/css" media="screen">
-p.mbee{color:green;font-family: franklin; font-size: 160%;}
-</style>
+p.mbee{color:purple; font-family:cursive; font-size : 90%;}</style>
 </head>
-<body class="">
-<div class="flex-box-container">
 
-<div class="sidebar-wrapper">
-<nav class="sidebar">
-<ul class="list-unstyled components">
+  <body class="logged-out env-production">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/about:blank#start-of-content</tags> %26lt%3B%2Ftags%26gt" tabindex="1" class="px-2 py-4 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        <header class="Header header-logged-out  position-relative f4 py-3" role="banner">
+  <div class="container-lg d-flex px-3">
+    <div class="d-flex flex-justify-between flex-items-center">
+      <a class="header-logo-invertocat my-0" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/</tags> %26lt%3B%2Ftags%26gt" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+        <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+
+    </div>
+
+    <div class="HeaderMenu HeaderMenu--bright d-flex flex-justify-between flex-auto">
+        <nav class="mt-0">
+          <ul class="d-flex list-style-none">
+              <li class="ml-2">
+                <a class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:features" data-selected-links="/features /features/project-management /features/code-review /features/project-management /features/integrations /features" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//features</tags> %26lt%3B%2Ftags%26gt">
+                  Features
+</a>              </li>
+              <li class="ml-4">
+                <a class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/security /business/customers /business" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//business</tags> %26lt%3B%2Ftags%26gt">
+                  Business
+</a>              </li>
+
+              <li class="ml-4">
+                <a class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//explore</tags> %26lt%3B%2Ftags%26gt">
+                  Explore
+</a>              </li>
+
+              <li class="ml-4">
+                    <a class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:marketplace" data-selected-links=" /marketplace" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//marketplace</tags> %26lt%3B%2Ftags%26gt">
+                      Marketplace
+</a>              </li>
+              <li class="ml-4">
+                <a class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:pricing" data-selected-links="/pricing /pricing/developer /pricing/team /pricing/business-hosted /pricing/business-enterprise /pricing" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//pricing</tags> %26lt%3B%2Ftags%26gt">
+                  Pricing
+</a>              </li>
+          </ul>
+        </nav>
+
+      <div class="d-flex">
+          <div class="d-lg-flex flex-items-center mr-3">
+            <div class="header-search scoped-search site-scoped-search js-site-search position-relative" role="search">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="927454" data-scoped-search-url="/rabbitmq/rabbitmq-tutorials/search" data-unscoped-search-url="/search" action="/rabbitmq/rabbitmq-tutorials/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <label class="form-control header-search-wrapper  js-chromeless-input-container">
+            <a class="header-search-scope no-underline" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/src</tags> %26lt%3B%2Ftags%26gt">This repository</a>
+        <input type="text" class="form-control header-search-input  js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" value="" placeholder="Search" aria-label="Search this repository" data-unscoped-placeholder="Search GitHub" data-scoped-placeholder="Search" autocapitalize="off">
+          <input type="hidden" class="js-site-search-type-field" name="type">
+      </label>
+</form>  </div>
+</div>
+
+          </div>
+
+        <span class="d-inline-block">
+            <div class="HeaderNavlink px-0 py-2 m-0">
+              <a class="text-bold text-white no-underline" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//login?return_to=%2Frabbitmq%2Frabbitmq-tutorials%2Ftree%2Fmaster%2Fjavascript-nodejs%2Fsrc</tags> %26lt%3B%2Ftags%26gt" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+                <span class="text-gray">or</span>
+                <a class="text-bold text-white no-underline" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//join?source=header-repo</tags> %26lt%3B%2Ftags%26gt" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+            </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main" class="application-main ">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container="">
+      
+
+
+
+  
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+      <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//login?return_to=%2Frabbitmq%2Frabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+    Watch
+  </a>
+  <a class="social-count" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/watchers</tags> %26lt%3B%2Ftags%26gt" aria-label="227 users are watching this repository">
+    227
+  </a>
+
+  </li>
+
+  <li>
+      <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//login?return_to=%2Frabbitmq%2Frabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/stargazers</tags> %26lt%3B%2Ftags%26gt" aria-label="2632 users starred this repository">
+      2,632
+    </a>
+
+  </li>
+
+  <li>
+      <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//login?return_to=%2Frabbitmq%2Frabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+        Fork
+      </a>
+
+    <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/network</tags> %26lt%3B%2Ftags%26gt" class="social-count" aria-label="1572 users forked this repository">
+      1,572
+    </a>
+  </li>
 </ul>
+
+      <h1 class="public ">
+  <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq</tags> %26lt%3B%2Ftags%26gt">rabbitmq</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt">rabbitmq-tutorials</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /rabbitmq/rabbitmq-tutorials" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /rabbitmq/rabbitmq-tutorials/issues" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/issues</tags> %26lt%3B%2Ftags%26gt">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">0</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /rabbitmq/rabbitmq-tutorials/pulls" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/pulls</tags> %26lt%3B%2Ftags%26gt">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+
+
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /rabbitmq/rabbitmq-tutorials/pulse" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/pulse</tags> %26lt%3B%2Ftags%26gt">
+    <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg>
+    Insights
+</a>
+
 </nav>
 
-<section class="main loader-wrapper">
-<div class="sidebar-main-wrapper">
-<button class="btn navbar-btn" id="sidebarCollapse" type="button">
-<i class="glyphicon glyphicon-menu-hamburger"></i>
-</button>
-<div id="notifications">
-</div>
-<style>
-  h1 {
-    font-size: 15vw;
-  }
-</style>
-<div class="row">
-<div class="col-md-12 text-center">
-<h1>401</h1>
-<p>
-Session expired, please login again. Try to remove the cookies for this domain if you're unable to. Sorry for the inconvenience.
-</p>
-</div>
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+  <div class="file-navigation">
+    
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/about:blank#</tags> %26lt%3B%2Ftags%26gt" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/about:blank#</tags> %26lt%3B%2Ftags%26gt" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/lrb-add-java-connection-recovery/javascript-nodejs/src</tags> %26lt%3B%2Ftags%26gt" data-name="lrb-add-java-connection-recovery" data-skip-pjax="true" rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                lrb-add-java-connection-recovery
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/src</tags> %26lt%3B%2Ftags%26gt" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-</div>
-</section>
-</div>
-<footer>
-<div class="container">
-<div class="row">
-<div class="col-xs-6 col-sm-4 col-md-3 rl-xs">
-<h4>Menu</h4>
-<ul class="quicklinks">
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com</tags> %26lt%3B%2Ftags%26gt">Home</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/plans.html</tags> %26lt%3B%2Ftags%26gt">Plans</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/docs.html</tags> %26lt%3B%2Ftags%26gt">Documentation</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/blog/index.html</tags> %26lt%3B%2Ftags%26gt">Blog</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/about_us.html</tags> %26lt%3B%2Ftags%26gt">About</a>
-</li>
-</ul>
-</div>
-<div class="col-xs-6 col-sm-4 col-md-3">
-<h4>More</h4>
-<ul class="quicklinks">
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>http://status.cloudamqp.com/</tags> %26lt%3B%2Ftags%26gt" target="_new">Status</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/terms_of_service.html</tags> %26lt%3B%2Ftags%26gt">Terms of Service</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/program_policies.html</tags> %26lt%3B%2Ftags%26gt">Program Policies</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/privacy_policy.html</tags> %26lt%3B%2Ftags%26gt">Privacy Policy</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/security_policy.html</tags> %26lt%3B%2Ftags%26gt">Security Policy</a>
-</li>
-<li>
-<a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/imprint.html</tags> %26lt%3B%2Ftags%26gt">Imprint</a>
-</li>
-</ul>
-</div>
-<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-3 text-center support-call-out">
-<p class="logo">
-CloudAMQP
-</p>
-<a class="btn btn-xl btn-invert" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://www.cloudamqp.com/support.html</tags> %26lt%3B%2Ftags%26gt">Contact Support</a>
-<p class="opening-hours">Open 24 hours a day, 7 days a week</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12 text-center">
-<hr style="margin: 10px;">
-<p style="margin: 0;">© Copyright 2011-2018 CloudAMQP. RabbitMQ and the RabbitMQ Logo are trademarks of Pivotal Software, Inc.</p>
-</div>
-</div>
-</div>
-</footer>
-
-</div>
-
-<div class="modal fade" id="confirm-modal" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document">
-<form class="form-horizontal modal-content">
-<div class="modal-header">
-<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-<span aria-hidden="true">
-×
-</span>
-</button>
-<h4 class="modal-title" id="confirm-title">Confirm</h4>
-</div>
-<div class="modal-body">
-<p id="confirm-body">
-Are your sure?
-</p>
-<div class="form-group" id="pwd-confirm-form">
-<label class="col-sm-2 control-label">Password</label>
-<div class="col-sm-8">
-<input autocomplete="off" class="form-control" id="pwd-confirm" name="confirm_password" required="" type="password">
-</div>
-</div>
-</div>
-<div class="modal-footer">
-<button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
-<button class="btn" id="confirm-button" type="submit">Confirm</button>
-</div>
-</form>
-</div>
-</div>
+    <div class="BtnGroup float-right">
+      
+  <button class="btn btn-sm BtnGroup-item disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    Create new file
+  </button>
 
 
 
+      <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/find/master</tags> %26lt%3B%2Ftags%26gt" data-pjax="" data-hotkey="t" class="js-pjax-capture-input btn btn-sm BtnGroup-item empty-icon">
+        Find file
+      </a>
+      <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commits/master/javascript-nodejs/src</tags> %26lt%3B%2Ftags%26gt" class="btn btn-sm BtnGroup-item empty-icon tooltipped tooltipped-nw" aria-label="Browse commits for this branch">
+        History
+      </a>
+    </div>
+    <div class="breadcrumb"><span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials</tags> %26lt%3B%2Ftags%26gt"><span>rabbitmq-tutorials</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs</tags> %26lt%3B%2Ftags%26gt"><span>javascript-nodejs</span></a></span><span class="separator">/</span><strong class="final-path">src</strong><span class="separator">/</span></div>
+  </div>
+
+  
+
+<include-fragment src="/rabbitmq/rabbitmq-tutorials/tree-commit/ea4dd6a7edfc4b5ba98cc87d628279fa51525e35/javascript-nodejs/src" class="commit-tease commit-loader">
+  <div class="blank">
+    
+    Fetching latest commit…
+  </div>
+  <div class="loader-error">
+    Cannot retrieve the latest commit at this time.
+  </div>
+</include-fragment>
 
 
-<p class="mbee">XXXXXXXXXXXXXXXXXXXX
-            <br>
-            YYYYYYYYYYY
-            <a href="tbd">tbd</a>
-            </p></body></html>
+<div class="file-wrap">
+
+  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/ea4dd6a7edfc4b5ba98cc87d628279fa51525e35/javascript-nodejs/src</tags> %26lt%3B%2Ftags%26gt">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax="">
+      <tbody><tr class="up-tree js-navigation-item">
+        <td></td>
+        <td><a rel="nofollow" title="Go to parent directory" class="js-navigation-open" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs</tags> %26lt%3B%2Ftags%26gt">..</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+
+    </tbody><tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="emit_log.js" id="1a69aa891fa0e5f404c07e6cb939ca6a-fcb8ccbaed1858b984241cfe8b86efa769fb7d4c" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/emit_log.js</tags> %26lt%3B%2Ftags%26gt">emit_log.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="missing semicolon" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/b98c82349250064456daa53689f51951331c8503</tags> %26lt%3B%2Ftags%26gt">missing semicolon</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-06T09:47:33Z">Aug 6, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="emit_log_direct.js" id="16a987a2ed777c8eec294554e3d35363-37abf34196ff49a6cb5a4b00c6198407c7856822" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/emit_log_direct.js</tags> %26lt%3B%2Ftags%26gt">emit_log_direct.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Routing tutorial" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/273e91a4c376eaba5985089e3bdea051bd6ec526</tags> %26lt%3B%2Ftags%26gt">refactored Routing tutorial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-06T11:18:47Z">Aug 6, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="emit_log_topic.js" id="86cc2609a8f042e0f8526e435c9281de-2418c1077135b674b894761a90de82e18cba2531" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/emit_log_topic.js</tags> %26lt%3B%2Ftags%26gt">emit_log_topic.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Topics tutorial" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/bd9f582bf3fa2c0761e200f1f869056333653b3d</tags> %26lt%3B%2Ftags%26gt">refactored Topics tutorial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-06T13:26:04Z">Aug 6, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="new_task.js" id="8ad2058a1de6a86840622c17ade076cb-b6739127ef0eb1b9f59115eddc56e51a315e0797" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/new_task.js</tags> %26lt%3B%2Ftags%26gt">new_task.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Work Queues tutorial" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/b81868255c68f96668733076bc8a7b6c9fee3442</tags> %26lt%3B%2Ftags%26gt">refactored Work Queues tutorial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-05T12:29:53Z">Aug 5, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="receive.js" id="ee7463e15be361b0825dc0ef5aed1356-ef0419b2346660c46d136e54f095c4510c96fa13" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive.js</tags> %26lt%3B%2Ftags%26gt">receive.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="indentation" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/34abded12ec09bcf744095ee76c9167c765d4429</tags> %26lt%3B%2Ftags%26gt">indentation</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-07T09:57:59Z">Aug 7, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="receive_logs.js" id="8eee9c9d161e83876b3bd27f2b4dc6b6-f56e904bb04cce10f217a09b4f3a653765c7836e" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive_logs.js</tags> %26lt%3B%2Ftags%26gt">receive_logs.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Publish/Subscribe tutorial code" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/99a13e78d3b03a4db8fc62e7ded702b0747b8461</tags> %26lt%3B%2Ftags%26gt">refactored Publish/Subscribe tutorial code</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-05T15:35:36Z">Aug 5, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="receive_logs_direct.js" id="ce2320e70b5f6e2538fda3271c69679d-bccf0d14a4d0c0355a480f06fcdabfda9712605d" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive_logs_direct.js</tags> %26lt%3B%2Ftags%26gt">receive_logs_direct.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="replace map with forEach" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/8f644513abb0100cb60b43f8b951dc107d03a0b3</tags> %26lt%3B%2Ftags%26gt">replace map with forEach</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-06T12:36:07Z">Aug 6, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="receive_logs_topic.js" id="196581184f4cae74a9bf08149f936000-4b837f19907e1de4205a391ed5478bbc96f738e9" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive_logs_topic.js</tags> %26lt%3B%2Ftags%26gt">receive_logs_topic.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Topics tutorial" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/bd9f582bf3fa2c0761e200f1f869056333653b3d</tags> %26lt%3B%2Ftags%26gt">refactored Topics tutorial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-06T13:26:04Z">Aug 6, 2015</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="rpc_client.js" id="892f46655a6d588347645ae6d61588b6-f6fd89ecf061dcc5e5ac1f7b9461b905e66ba3fc" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/rpc_client.js</tags> %26lt%3B%2Ftags%26gt">rpc_client.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Update rpc_client.js
+
+Comparison msg.properties.correlationId == corr may cause unexpected type coercion" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/2e6ccdba965f2f1c9c2f35ce552f4e84afe9690b</tags> %26lt%3B%2Ftags%26gt">Update rpc_client.js</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2017-04-27T15:17:09Z">Apr 27, 2017</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="rpc_server.js" id="f2d57b469bb6d82d356346537de16253-c9e0f121cde898ee8b7210ff5dd256e511935d77" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/rpc_server.js</tags> %26lt%3B%2Ftags%26gt">rpc_server.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Update rpc_server.js
+
+Avoid unexpected type coercion" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/50b68f7263fa1e5aa71dee862357d625d64b48ac</tags> %26lt%3B%2Ftags%26gt">Update rpc_server.js</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2017-04-27T15:21:07Z">Apr 27, 2017</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="send.js" id="60414348216ad3fcee74cfd0e315ab73-948e5688883d4947598c2cef8cd75a983a6d3549" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/send.js</tags> %26lt%3B%2Ftags%26gt">send.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Explain the difference with Node 6" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/46e987336eeb16814c56ab385786ca24cb94a9c7</tags> %26lt%3B%2Ftags%26gt">Explain the difference with Node 6</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2016-08-12T14:30:26Z">Aug 12, 2016</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="worker.js" id="8a5b5909f5b3ce1a25a1c499ab30da2c-40c391fe7039900755ffac761c448893f54d67ab" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/worker.js</tags> %26lt%3B%2Ftags%26gt">worker.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="refactored Work Queues tutorial" class="message" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs//rabbitmq/rabbitmq-tutorials/commit/b81868255c68f96668733076bc8a7b6c9fee3442</tags> %26lt%3B%2Ftags%26gt">refactored Work Queues tutorial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2015-08-05T12:29:53Z">Aug 5, 2015</time-ago></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+  
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">© 2018 <span title="0.18540s from unicorn-1333347201-t7rhn">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/site/terms</tags> %26lt%3B%2Ftags%26gt">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/site/privacy</tags> %26lt%3B%2Ftags%26gt">Privacy</a></li>
+        <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://help.github.com/articles/github-security/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://status.github.com/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://help.github.com/</tags> %26lt%3B%2Ftags%26gt">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/</tags> %26lt%3B%2Ftags%26gt">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/contact</tags> %26lt%3B%2Ftags%26gt">Contact GitHub</a></li>
+      <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://developer.github.com/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://training.github.com/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://shop.github.com/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://blog.github.com/</tags> %26lt%3B%2Ftags%26gt" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/about</tags> %26lt%3B%2Ftags%26gt">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    
+    
+    
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/</tags> %26lt%3B%2Ftags%26gt">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="mailto:ah@joeschedule.mailgun.org?subject=Test(js) joemailweb.&amp;bcc=jimmy@joeschedule.mailgun.org&amp;body=%26lttags img=keep%26gt<tags img=keep>https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/</tags> %26lt%3B%2Ftags%26gt">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+  </div>
+</div>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+<div id="hovercard-aria-description" class="sr-only">
+  Press h to open a hovercard with more details.
+</div>
+
+
+  
+
+
+<p class="mbee">Thank you for using<br> Mailbee <br><a href="https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/src">https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/javascript-nodejs/src</a></p></body></html>
