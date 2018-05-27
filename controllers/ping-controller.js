@@ -3,9 +3,8 @@
 //var util = require('util');
 //var session = require('client-sessions');
 //var assert = require('assert');
-var replyController = require('./reply-controller');
-var g_test = {};
-g_test.useMG = process.env.Mg__dontuse ? false : true;
+
+
 var cloudAMQP = 
 {
     "user": (process.env.CLOUDAMQP_USER || 'wtf'),
@@ -20,15 +19,9 @@ module.exports.ping = function (req, res) {
     console.log(JSON.stringify(req.body) );
     var results = {'query': req.query, 'body':req.body};
     res.json(results);
-    //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
-    if (g_test.useMG) {
-        replyController.mailStore(req, res);
-    }
-    else {
-        console.log(`\t\t g_test.useMG= ${g_test.useMG}`);
-    }
-    
+    //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));   
 };
+
 module.exports.pingLemur = function (req, res) {
     console.log("\t *******ping-controller.pingLemur");
     console.log(req.params);

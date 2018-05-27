@@ -27,9 +27,9 @@ else {
   "toAdmin": "mastronardif@gmail.com"
   };
 }
-//var replyController = require('./controllers/reply-controller');
 var pingController = require('./controllers/ping-controller');
 var readController = require('./controllers/read-controller');
+var mailController = require('./controllers/mail-controller');
 
 console.log(__dirname);
 
@@ -41,7 +41,7 @@ app.set('port', (process.env.PORT || 3000));
 app.use(express.static(__dirname + '/public'));
 //app.use(express.static(__dirname + '/uploads'));
 
-router.get("/mylist",function(req,res){
+router.get("/mylist",function(req,res) {
   res.sendFile(path + "thelist.html");
 });
 
@@ -49,11 +49,11 @@ router.get("/about",function(req,res){
   res.sendFile(path + "about.html");
 });
 
-
 router.all ('/read', readController.read);
-
 //router.all ('/pingcors', pingController.pingcors);
-router.all ('/ping', pingController.ping);
+router.all ('/replyMail', mailController.mailStore);
+router.all ('/pingReply', mailController.pingReply);
+router.all ('/ping',      pingController.ping);
 router.all ('/pingLemur', pingController.pingLemur);
 
 //router.get ('/pingjp', pingController.pingjp);

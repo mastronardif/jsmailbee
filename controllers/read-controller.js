@@ -11,6 +11,5 @@ module.exports.read = function (req, res) {
     var results = {'query': req.query, 'body':req.body};
     //res.json(results);
     res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
-
     //replyController.mailStore(req, res);
 };

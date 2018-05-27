@@ -10,6 +10,50 @@ var admin = global.config.Admin;
 
 var mailgun = require('mailgun-js')({apiKey: mg.api_key, domain: mg.domain});
 
+var g_test = {};
+g_test.useMG = process.env.Mg__dontuse ? false : true;
+
+module.exports.pingReply = function (req, res) {
+    console.log("ping-controller.ping");
+    console.log(req.params);
+    //console.log(req);
+    console.log(JSON.stringify(req.body) );
+    var results = {'query': req.query, 'body':req.body};
+
+    var data = {
+        from: admin.fromAdmin,
+        to: admin.toAdmin,
+        subject: admin.subject,
+        //text: 'Testing some Mailgun awesomness!',
+        html: results
+        //attachment: file
+        //attachment: attch //[attch,attch] 
+        //inline: file
+      };
+    if (g_test.useMG) {
+        data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
+        mailgun.messages().send(data, function (error, body) {
+        console.log(body);
+      
+        if (error) {
+            console.log('error = ', error);
+        }
+        else {
+            console.log(body);
+        }
+        });
+      } // end debug
+      else {
+          console.log('not doing res.send(htmlResp)');
+          res.json(results);
+          //res.json({"results":"Not doing MG."}+results);
+      }
+
+    //res.json(results);
+    //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));   
+};
+
+
 module.exports.mailStore = function (req, res) {
   //var request = require('request');
   var file;
@@ -19,7 +63,7 @@ module.exports.mailStore = function (req, res) {
   var data22 =  req.fields;
 
   console.log("\n\ndata = \n", data22 );
-  var htmlResp = json2html.transform(data22, gmyMailBody.transform);
+  var htmlResp = json2html.transform(data22, {"f": "u"});
   console.log("htmlResp = ", htmlResp );
 
   // for each file
@@ -52,8 +96,7 @@ console.log('\n\n new_path = \n', new_path);
 console.log(`\n\n *new_path = ${__filename} \n', ${new_path}`);
 var html = fs.readFileSync(new_path).toString(); 
 //
-
-if ('fm debug' === 'fm debug') {
+if (g_test.useMG) {
   data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
   mailgun.messages().send(data, function (error, body) {
   console.log(body);
@@ -66,8 +109,10 @@ if ('fm debug' === 'fm debug') {
   }
   });
 } // end debug
+else {
     console.log('not doing res.send(htmlResp)');
-  //res.send(htmlResp);
+    res.send({"results":"Not doing MG."});
+}
 };
 
 /****************
@@ -239,20 +284,12 @@ mailgun.messages().send(data, function (error, body) {
     res.send(html);
     //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
 };
-
+};
+******/
 //print out error messages
 function printError(error){
   console.error(error.message);
 }
 
-var gmyMailBody = {
-  "transform" : {'<>':'li','html':'${aaa.name} (${aaa.age})',
 
-   "<>":"span","html":" <br/> <br/>Sincerely, <br/><br/> <hr/>${nameMy}",
-   "<>":"span","html":" <br/> ${emailMy}",
-   "<>":"span","html":" <br/><br/> Westfield Dog walkers",
-
-   "<>":"span","html":" <br/>FM"
-} 
-};
-******/
+ 
