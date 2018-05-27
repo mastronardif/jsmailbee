@@ -4,6 +4,15 @@
 //var session = require('client-sessions');
 //var assert = require('assert');
 var replyController = require('./reply-controller');
+var g_test = {};
+g_test.useMG = process.env.Mg__dontuse ? false : true;
+var cloudAMQP = 
+{
+    "user": (process.env.CLOUDAMQP_USER || 'wtf'),
+    "pw":   (process.env.CLOUDAMQP_PW   || 'wtf'),
+    "host": (process.env.CLOUDAMQP_HOST || 'wtf'),
+};
+
 module.exports.ping = function (req, res) {
     console.log("ping-controller.ping");
     console.log(req.params);
@@ -12,10 +21,16 @@ module.exports.ping = function (req, res) {
     var results = {'query': req.query, 'body':req.body};
     res.json(results);
     //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
-    replyController.mailStore(req, res);
+    if (g_test.useMG) {
+        replyController.mailStore(req, res);
+    }
+    else {
+        console.log(`\t\t g_test.useMG= ${g_test.useMG}`);
+    }
+    
 };
 module.exports.pingLemur = function (req, res) {
-    console.log("ping-controller.pingLemur");
+    console.log("\t *******ping-controller.pingLemur");
     console.log(req.params);
     //console.log(req);
     console.log(JSON.stringify(req.body) );
@@ -24,7 +39,7 @@ module.exports.pingLemur = function (req, res) {
     {
         "properties":{},
         "routing_key":"task_queue",
-        "payload":`"<tag>${req.body.tagurl}}</tag>"`,
+        "payload":`"<tag>${req.body.tagurl}</tag>"`,
         "payload_encoding":"string"
     };
     //var results = {'query': req.query, 'body':req.body};
@@ -33,7 +48,7 @@ module.exports.pingLemur = function (req, res) {
     var request = require('request');
     var options = {
       "method": "POST",
-      "hostname": "wasp.rmq.cloudamqp.com",
+      "hostname": cloudAMQP.host, //"wasp.rmq.cloudamqp.com",
       "port": null,
       "path": "/api/exchanges/pyxvbrth/amq.default/publish",
       "headers": {
@@ -43,21 +58,20 @@ module.exports.pingLemur = function (req, res) {
       },
       json: postData
     };
-    
-    request.post(
-        'https://pyxvbrth:o3f6R_94tCWiRMYUL5KrZPHEVo6Foz5y@wasp.rmq.cloudamqp.com/api/exchanges/pyxvbrth/amq.default/publish',
+    const urlpath=`https://${cloudAMQP.user}:${cloudAMQP.pw}@${cloudAMQP.host}/api/exchanges/pyxvbrth/amq.default/publish`;
+    console.log('urlpath= ', urlpath);
+    request.post(urlpath,
         { json: postData },
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log(body)
             }
-            res.json(body);
-        }
+            res.json('{"payload":PostData.payload}'+body);
+            }
     );
-
-
 };
 
+/*****
 module.exports.pingjp = function (req, res) {
     console.log("pingjp-controller");
     console.log(req.query.callback);
@@ -87,6 +101,7 @@ module.exports.pingcors = function (req, res) {
     res.json(results);
     //res.send('echo '+ JSON.stringify(req.query) + JSON.stringify(req.body));
 };
+ */
 
 //print out error messages
 function printError(error){

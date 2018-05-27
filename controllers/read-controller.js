@@ -2,7 +2,7 @@
 var readHelp       = require('../read/readHelpers');
 
 module.exports.read = function (req, res) {
-    console.log("read-controller:read", req.params);
+    console.log("\t\tread-controller:read", req.params);
     //console.log(req);
     console.log(JSON.stringify(req.body) + "\n"+ req.body.tagurl );
     

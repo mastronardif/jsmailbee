@@ -1,9 +1,5 @@
 /* jslint node: true */
 'use strict';
-// $ jshint ./controllers/reply-controller.js
-
-//var util = require('util');
-//var session = require('client-sessions');
 //var assert = require('assert');
 var json2html = require('node-json2html');
 var validator = require('validator');
@@ -16,7 +12,7 @@ var mailgun = require('mailgun-js')({apiKey: mg.api_key, domain: mg.domain});
 
 module.exports.mailStore = function (req, res) {
   //var request = require('request');
-  var file; // = request("https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png");
+  var file;
   file = req.data;
   var filename = "wtf.jpg";
 
@@ -74,7 +70,7 @@ if ('fm debug' === 'fm debug') {
   //res.send(htmlResp);
 };
 
-
+/****************
 module.exports.reply = function (req, res) {
     console.log("reply-controller.reply");
     //console.log(req.params);
@@ -258,5 +254,5 @@ var gmyMailBody = {
 
    "<>":"span","html":" <br/>FM"
 } 
-
 };
+******/
