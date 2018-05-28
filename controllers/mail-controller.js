@@ -14,7 +14,7 @@ var g_test = {};
 g_test.useMG = process.env.Mg__dontuse ? false : true;
 
 module.exports.pingReply = function (req, res) {
-    console.log("ping-controller.ping");
+    console.log("mail-controller.pingReply");
     console.log(req.params);
     //console.log(req);
     console.log(JSON.stringify(req.body) );
@@ -25,13 +25,13 @@ module.exports.pingReply = function (req, res) {
         to: admin.toAdmin,
         subject: admin.subject,
         //text: 'Testing some Mailgun awesomness!',
-        html: results
+        text: `${JSON.stringify(results, null, 2)}`
         //attachment: file
         //attachment: attch //[attch,attch] 
         //inline: file
       };
     if (g_test.useMG) {
-        data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
+        //data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
         mailgun.messages().send(data, function (error, body) {
         console.log(body);
       
@@ -39,7 +39,8 @@ module.exports.pingReply = function (req, res) {
             console.log('error = ', error);
         }
         else {
-            console.log(body);
+            //console.log(body);
+            res.send(body);
         }
         });
       } // end debug
