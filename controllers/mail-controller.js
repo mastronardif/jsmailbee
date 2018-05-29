@@ -100,14 +100,12 @@ var html = fs.readFileSync(new_path).toString();
 if (g_test.useMG) {
   data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
   mailgun.messages().send(data, function (error, body) {
-  console.log(body);
-
-  if (error) {
+    if (error) {
       console.log('error = ', error);
-  }
-  else {
+    }
+    else {
       console.log(body);
-  }
+    }
   });
 } // end debug
 else {
