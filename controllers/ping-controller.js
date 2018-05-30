@@ -32,7 +32,7 @@ module.exports.pingLemur = function (req, res) {
     {
         "properties":{},
         "routing_key":"task_queue",
-        "payload":`"<tag>${req.body.tagurl}</tag>"`,
+        "payload":`"<tags>${req.body.tagurl}</tags>"`,
         "payload_encoding":"string"
     };
     //var results = {'query': req.query, 'body':req.body};

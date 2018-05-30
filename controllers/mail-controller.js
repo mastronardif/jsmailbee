@@ -106,12 +106,14 @@ if (g_test.useMG) {
     else {
       console.log(body);
     }
+    res.json(body);
   });
 } // end debug
 else {
     console.log('not doing res.send(htmlResp)');
-    res.send({"results":"Not doing MG."});
+    res.json({"results":"Not doing MG."});    
 }
+
 };
 
 /****************
