@@ -68,7 +68,7 @@ module.exports.mailStore = function (req, res) {
   console.log("htmlResp = ", htmlResp );
 
   // for each file
-  var attch = new mailgun.Attachment({data: file, filename: filename});
+  //var attch = new mailgun.Attachment({data: file, filename: filename});
 
   //console.log('\n\n mailStore file = \n', file); 
 
@@ -96,9 +96,10 @@ console.log('\n\n new_path = \n', new_path);
 
 console.log(`\n\n *new_path = ${__filename} \n', ${new_path}`);
 var html = fs.readFileSync(new_path).toString(); 
+//console.log("html=", html);
 //
 if (g_test.useMG) {
-  data.html = html; //'<h1>Testing some Mailgun awesomness!<h1/>';
+  data.html = html || 'Something went wrong. :( with the fs.read ,aybe a timing issue....'; //'<h1>Testing some Mailgun awesomness!<h1/>';
   mailgun.messages().send(data, function (error, body) {
     if (error) {
       console.log('error = ', error);
