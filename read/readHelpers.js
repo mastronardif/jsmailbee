@@ -6,6 +6,7 @@ var cheerio = require('cheerio');
 var path= require('path');
 var { JSDOM } = require('jsdom');
 const url = require('url');
+const uuidv4 = require('uuid/v4');
 
 // constant data
 const KconfigFN = './public/css/mystamp.css';
@@ -45,6 +46,9 @@ module.exports.test = function (src) {
     g.protocol= url.parse(Url).protocol ? url.parse(Url).protocol : 'https';
 
     readUrl(Url, outputType);
+	var id = uuidv4();//uuidv5('joeschedule.com', uuidv5.DNS); //123;
+	console.log(id);
+	return id; 
 };
 
 function readUrl(url, output) {
