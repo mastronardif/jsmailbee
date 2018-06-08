@@ -46,13 +46,19 @@ module.exports.test = function (src) {
     g.protocol= url.parse(Url).protocol ? url.parse(Url).protocol : 'https';
 
     readUrl(Url, outputType);
-	var id = uuidv4();//uuidv5('joeschedule.com', uuidv5.DNS); //123;
-	console.log(id);
-	return id; 
 };
 
-function readUrl(url, output) {
-	getUrl(url, output);	
+module.exports.test22 = function (src, cb) {
+    console.log("readHelpers.test22");
+    var Url = src;
+    g.baseHRef= myGetBaseRef(Url); 
+    g.protocol= url.parse(Url).protocol ? url.parse(Url).protocol : 'https';
+
+    readUrl(Url, outputType, cb);
+};
+
+function readUrl(url, output, cb) {
+	getUrl(url, output, cb);	
 }
 
 function myGetBaseRef(url) {
@@ -66,7 +72,7 @@ function myGetBaseRef(url) {
     return baseRef;
 }
 
-function getUrl(url, output) {
+function getUrl(url, output, cb) {
     request(url, function(error, response, html){
         if(!error){
 
@@ -97,7 +103,13 @@ function getUrl(url, output) {
             bobo(output.path+'html.html', html);
 			switch (output.outType) {
 				case 'file':
-					bobo(output.path+'html2.html',  dom.serialize());
+					//bobo(output.path+'html2.html',  dom.serialize());
+					var id = uuidv4();//uuidv5('joeschedule.com', uuidv5.DNS); //123;
+					console.log(id);
+					fs.writeFileSync(output.path+id+'.html', dom.serialize());
+					if (typeof cb === 'function') {
+						cb(null, id);
+					}				
 					break;
 				// case 'response':
 				// 	output.res.send( dom.serialize());			
@@ -181,6 +193,7 @@ function makeMailToFromURI(uri) {
      
     return url2;
 }
+
 
 function bobo(path, src) {
       fs.writeFile(path, src, (err) => {
