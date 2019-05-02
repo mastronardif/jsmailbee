@@ -73,6 +73,7 @@ function myGetBaseRef(url) {
 }
 
 function getUrl(url, output, cb) {
+	console.log(`\t ** * * * * * getUrl(${url}, output, cb)`);
     request(url, function(error, response, html){
         if(!error){
 
@@ -119,6 +120,10 @@ function getUrl(url, output, cb) {
 					console.log( dom.serialize());
 			}            
         }
+		else {
+					console.log( `\n Error: ${error}`);
+					cb(error, "idWTF");
+		}
     })
 }
 
