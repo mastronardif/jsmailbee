@@ -30,8 +30,9 @@ module.exports.pingLemur = function (req, res) {
 
     var postData = 
     {
-        "properties":{},
+        "properties":{"delivery_mode":2},
         "routing_key":"task_queue",
+        //"payload":`"ZZZZZZZZZZZZZZZZZZZZZZZZ"`,
         "payload":`"<tags>${req.body.tagurl}</tags>"`,
         "payload_encoding":"string"
     };
@@ -51,8 +52,12 @@ module.exports.pingLemur = function (req, res) {
       },
       json: postData
     };
-    const urlpath=`https://${cloudAMQP.user}:${cloudAMQP.pw}@${cloudAMQP.host}/api/exchanges/pyxvbrth/amq.default/publish`;
-    console.log('urlpath= ', urlpath);
+    //const urlpath=`https://${cloudAMQP.user}:${cloudAMQP.pw}@${cloudAMQP.host}/api/exchanges/pyxvbrth/amq.default/publish`;
+    //const urlpath=`http://guest:guest@localhost:15672/api/exchanges/%2f/amq.default/publish`;
+    const urlpath=`http://${cloudAMQP.user}:${cloudAMQP.pw}@${cloudAMQP.host}/api/exchanges/%2f/amq.default/publish`;
+    //const urlpath=`https://${cloudAMQP.user}:${cloudAMQP.pw}@${cloudAMQP.host}/api/exchanges/pyxvbrth/amq.default/publish`;
+    
+    console.log('\t urlpath= ', urlpath);
     request.post(urlpath,
         { json: postData },
         function (error, response, body) {
