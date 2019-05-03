@@ -15,6 +15,7 @@
     "jsdom": "^11.10.0",
     "mailgun-js": "^0.18.0",
     "node-json2html": "^1.2.0",
+    "request": "^2.88.0",
     "validator": "^9.4.1"
   }
 }

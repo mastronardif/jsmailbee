@@ -74,7 +74,14 @@ function myGetBaseRef(url) {
 
 function getUrl(url, output, cb) {
 	console.log(`\t ** * * * * * getUrl(${url}, output, cb)`);
-    request(url, function(error, response, html){
+    request(//url, 
+        {
+            'url':url,
+            'method': "GET",
+            'proxy':'http://bcpxy.nycnet:8080' // at work proxy!!!
+          },
+
+        function(error, response, html){
         if(!error){
 
             const dom = new JSDOM(html);
